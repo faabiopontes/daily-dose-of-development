@@ -11,16 +11,4 @@
 |
 */
 
-Route::get('/getFolderAndFileCountFromPath', function () {
-
-});
-
-Route::get('/getFolderAndFileCountFromPath', function ($folder) {
-    echo \App\Fsp\Util::getFolderAndFileCountFromPath( public_path($folder));
-});
-Route::get('/test', function () {
-    echo "test";
-    // echo getcwd();
-    // var_dump(scandir('data'));
-    // echo \App\Fsp\Util::getFolderAndFileCountFromPath('public/data');
-});
+Route::get('/', "PagesController@home");
