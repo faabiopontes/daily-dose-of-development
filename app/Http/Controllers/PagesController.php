@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function home() {
-        echo "Welcome Home!";
+        return View('scroll');
     }
 }
