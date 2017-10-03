@@ -11,3 +11,5 @@ npm-debug.log
 yarn-error.log
 .env
 .fsp
+.vscode/temp.sql
+.vscode/last.sql
