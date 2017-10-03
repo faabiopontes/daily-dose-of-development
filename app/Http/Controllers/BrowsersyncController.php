@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class BrowsersyncController extends Controller
 {
     public function home() {
-        dd("Home");
         return View('scroll');
     }
 }

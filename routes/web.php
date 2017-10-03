@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/', "PagesController@home");
+Route::get('/', "BrowsersyncController@home");
+
+Route::get('/routes', function() {
+    $routeCollection = Route::getRoutes();
+    dd($routeCollection);
+});
