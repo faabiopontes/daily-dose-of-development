@@ -2,9 +2,8 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Fsp\Util;
+use Tests\TestCase;
 
 class UtilTest extends TestCase
 {

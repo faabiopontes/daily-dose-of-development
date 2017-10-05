@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PagesController extends Controller
 {
-    public function home() {
-        dd("Home");
+    public function home()
+    {
+        dd('Home');
+
         return View('scroll');
     }
 }

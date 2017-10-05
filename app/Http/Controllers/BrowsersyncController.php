@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class BrowsersyncController extends Controller
 {
-    public function home() {
+    public function home()
+    {
         return View('scroll');
     }
 }

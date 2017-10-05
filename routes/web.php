@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', "BrowsersyncController@home");
+Route::get('/', 'BrowsersyncController@home');
 
-Route::get('/routeParameters/{id}/{name}', function($param1, $param2) {
-    echo "<p>Yes, you can can use different parameters than the ones defined on the route";
+Route::get('/routeParameters/{id}/{name}', function ($param1, $param2) {
+    echo '<p>Yes, you can can use different parameters than the ones defined on the route';
     echo "<p>Param1: $param1</p>";
     echo "<p>Param2: $param2</p>";
 });
 
-Route::get('/routes', function() {
+Route::get('/routes', function () {
     $routeCollection = Route::getRoutes();
     dd($routeCollection);
 });
