@@ -23,3 +23,7 @@ Route::get('/routes', function () {
     $routeCollection = Route::getRoutes();
     dd($routeCollection);
 });
+
+Route::get('/tinymce', function() {
+    return View('tinymce');
+});

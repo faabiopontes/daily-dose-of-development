@@ -12,6 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .copyDirectory('node_modules/tinymce', 'public/plugins/tinymce')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .browserSync('localhost:8000');
 
