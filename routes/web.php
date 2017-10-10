@@ -24,10 +24,10 @@ Route::get('/routes', function () {
     dd($routeCollection);
 });
 
-Route::get('/tinymce', function() {
+Route::get('/tinymce', function () {
     return View('tinymce');
 });
 
-Route::post('/tinymce', function(\Illuminate\Http\Request $request) {
+Route::post('/tinymce', function (\Illuminate\Http\Request $request) {
     dd($request->input('mytextarea'));
 });
