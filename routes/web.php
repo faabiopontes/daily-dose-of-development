@@ -31,3 +31,7 @@ Route::get('/tinymce', function () {
 Route::post('/tinymce', function (\Illuminate\Http\Request $request) {
     dd($request->input('mytextarea'));
 });
+
+Route::get('/modular-js', function () {
+    return View('modular-js');
+});
