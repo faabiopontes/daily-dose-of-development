@@ -34,21 +34,23 @@
         </ul>
     </div>
 
-    <div class="container">
-        <div id="peopleModule">
-            <h1>People</h1>
-            <input type="text" placeholder="name"><button id="addPerson">Add Person</button>
-            <ul id="people">
-                <script id="people-template" type="text/template">
-                {{#people}}
-                    <li>
-                        <span>{{.}}</span>
-                        <i class="del">X</i>
-                    </li>
-                {{/people}}
-                </script>
-            </ul>
-        </div>
+    <div class="hero-unit">
+        <h1>JS Tutorials</h1>
+    </div>
+
+    <div id="peopleModule">
+        <h1>People</h1>
+        <input type="text" placeholder="name"><button id="addPerson">Add Person</button>
+        <ul id="people">
+            <script id="people-template" type="text/template">
+            {{#people}}
+                <li>
+                    <span>{{.}}</span>
+                    <i class="del">X</i>
+                </li>
+            {{/people}}
+            </script>
+        </ul>
     </div>
     <script src="js/modularJS.js"></script>
 </body>
