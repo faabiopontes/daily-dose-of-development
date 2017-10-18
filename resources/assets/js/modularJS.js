@@ -22,8 +22,9 @@ var people = {
     this.$button.on('click', this.addPerson.bind(this));
     this.$ul.delegate('i.del', 'click', this.deletePerson.bind(this));
   },
-  addPerson: function (value) {
-    this.people.push(value || this.$input.val());
+  addPerson: function (eventOrName) {
+    var name = typeof eventOrName == "string" ? eventOrName : this.$input.val();
+    this.people.push(name);
     this.$input.val('');
     this.render();
   },
