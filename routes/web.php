@@ -24,6 +24,8 @@ Route::get('/routes', function () {
     dd($routeCollection);
 });
 
+Route::get('/posts', 'VoyagerController@allPosts');
+
 Route::get('/tinymce', function () {
     return View('tinymce');
 });
@@ -34,4 +36,9 @@ Route::post('/tinymce', function (\Illuminate\Http\Request $request) {
 
 Route::get('/modular-js', function () {
     return View('modular-js');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
