@@ -1,52 +1,46 @@
-// trying to be private
-// but still public hacking Sources of navigator
+// fully private now?
 var peopleModule = (function () {
-  var peopleObject = {
-    names: ["Fabio", "Pontes"],
-    init: function () {
-      this.cacheDom();
-      this.bindEvents();
-      this.render();
-      this.returnFunctions();
-    },
-    returnFunctions: function () {
-      return {
-        addPerson: this.addPerson,
-        render: this.render
-      }
-    },
-    cacheDom: function () {
-      this.$el = $('#peopleModule');
-      this.$button = this.$el.find('button');
-      this.$input = this.$el.find('input');
-      this.$ul = this.$el.find('ul');
-      this.template = this.$el.find('#people-template').html();
-    },
-    render: function () {
-      var data = {
-        people: this.names,
-      };
-      this.$ul.html(Mustache.render(this.template, data));
-    },
-    bindEvents: function () {
-      this.$button.on('click', this.addPerson.bind(this));
-      this.$ul.delegate('i.del', 'click', this.deletePerson.bind(this));
-    },
-    addPerson: function (eventOrName) {
-      var name = typeof eventOrName == "string" ? eventOrName : this.$input.val();
-      this.names.push(name);
-      this.$input.val('');
-      this.render();
-    },
-    deletePerson: function (event) {
-      var $remove = $(event.target).closest('li');
-      var i = this.$ul.find('li').index($remove);
+  var people = ["Fabio", "Pontes"];
 
-      this.names.splice(i, 1);
-      this.render();
-    }
+  // this.cacheDom();
+  var $el = $('#peopleModule');
+  var $button = $el.find('button');
+  var $input = $el.find('input');
+  var $ul = $el.find('ul');
+  var template = $el.find('#people-template').html();
+
+  // this.bindEvents();
+  $button.on('click', addPerson.bind(this));
+  $ul.delegate('i.del', 'click', deletePerson.bind(this));
+
+  _render();
+
+  function _render() {
+    $ul.html(Mustache._render(template, { people: people }));
   };
-  peopleObject.init();
+
+  function addPerson(eventOrName) {
+    var name = typeof eventOrName == "string" ? eventOrName : $input.val();
+    people.push(name);
+    $input.val('');
+    _render();
+  }
+  function deletePerson(eventOrNumber) {
+    var i;
+    if (typeof eventOrNumber === "number") {
+      i = eventOrNumber;
+    } else {
+      var $remove = $(event.target).closest('li');
+      i = $ul.find('li').index($remove);
+    }
+    people.splice(i, 1);
+    _render();
+  }
+
+  return {
+    addPerson: addPerson,
+    deletePerson: deletePerson
+  };
 })();
 // people.init();
 
