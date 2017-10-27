@@ -15,7 +15,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .scripts([
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/mustache/mustache.min.js',
-    'resources/assets/js/modularJS.js'
+    'resources/assets/js/modularJS/people.js',
+    'resources/assets/js/modularJS/pubsub.js',
+    'resources/assets/js/modularJS/stats.js',
   ], 'public/js/modularJS.js')
   .styles('resources/assets/css/modularJS.css', 'public/css/modularJS.css')
   .scripts('resources/assets/js/appTinyMCE.js', 'public/js/appTinyMCE.js')
