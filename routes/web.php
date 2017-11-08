@@ -38,7 +38,7 @@ Route::view('pusher-front', 'pusher');
 Route::get('pusher-back', function () {
 
     $options = array(
-        'cluster' => 'us2',
+        'cluster' => env('PUSHER_APP_CLUSTER'),
         'encrypted' => true
     );
     $pusher = new Pusher\Pusher(
