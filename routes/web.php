@@ -32,3 +32,24 @@ Route::view('/modular-js', 'modular-js');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+/* Pusher */
+Route::view('pusher-front', 'pusher');
+Route::get('pusher-back', function () {
+
+    $options = array(
+        'cluster' => 'us2',
+        'encrypted' => true
+    );
+    $pusher = new Pusher\Pusher(
+        env('PUSHER_APP_ID'),
+        env('PUSHER_APP_KEY'),
+        env('PUSHER_APP_SECRET'),
+        $options
+    );
+
+    $data['message'] = 'hello world';
+    $pusher->trigger('my-channel', 'my-event', $data);
+    echo "Pusher Back End";
+    dd($pusher);
+});
