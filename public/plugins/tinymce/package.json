@@ -1,30 +1,33 @@
 {
-  "_from": "tinymce@4.7.1",
-  "_id": "tinymce@4.7.1",
+  "_from": "tinymce@4.7.2",
+  "_id": "tinymce@4.7.2",
   "_inBundle": false,
-  "_integrity": "sha1-iMhpQCt8mf5t8oAbxzJFD9rU9QA=",
+  "_integrity": "sha1-JL9k/x0eaBkOFUYaZY3CV6Qmxe4=",
   "_location": "/tinymce",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "tinymce@4.7.1",
+    "raw": "tinymce@4.7.2",
     "name": "tinymce",
     "escapedName": "tinymce",
-    "rawSpec": "4.7.1",
+    "rawSpec": "4.7.2",
     "saveSpec": null,
-    "fetchSpec": "4.7.1"
+    "fetchSpec": "4.7.2"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/tinymce/-/tinymce-4.7.1.tgz",
-  "_shasum": "88c869402b7c99fe6df2801bc732450fdad4f500",
-  "_spec": "tinymce@4.7.1",
-  "_where": "/var/www/daily-dose-of-development",
+  "_resolved": "https://registry.npmjs.org/tinymce/-/tinymce-4.7.2.tgz",
+  "_shasum": "24bf64ff1d1e68190e15461a658dc257a426c5ee",
+  "_spec": "tinymce@4.7.2",
+  "_where": "/home/fabio/webdev/daily-dose-of-development",
+  "author": {
+    "name": "Ephox Corporation"
+  },
   "bugs": {
-    "url": "http://www.tinymce.com/develop/bugtracker.php"
+    "url": "https://github.com/tinymce/tinymce/issues"
   },
   "bundleDependencies": false,
   "deprecated": false,
@@ -40,5 +43,5 @@
   "license": "LGPL-2.1",
   "main": "tinymce.js",
   "name": "tinymce",
-  "version": "4.7.1"
+  "version": "4.7.2"
 }
