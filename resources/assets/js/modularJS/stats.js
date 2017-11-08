@@ -4,7 +4,7 @@ var stats = (function() {
     var $stats = $('#statsModule');
     var template = $('#stats-template').html();
 
-    pubsub.subscribe('peopleCanged', setPeople)
+    pubsub.subscribe('peopleChanged', setPeople);
     _render();
 
     function _render() {

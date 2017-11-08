@@ -22,3 +22,11 @@ var events = {
     }
   }
 }
+
+// Example creating a event
+events.on("consoleParameter", function(parameter) {
+  console.log(parameter);
+});
+
+// Example of emitting a event created
+events.emit("consoleParameter", "PubSubPattern Rocks");
