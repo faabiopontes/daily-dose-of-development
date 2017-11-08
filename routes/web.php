@@ -36,11 +36,10 @@ Route::group(['prefix' => 'admin'], function () {
 /* Pusher */
 Route::view('pusher-front', 'pusher');
 Route::get('pusher-back', function () {
-
-    $options = array(
-        'cluster' => env('PUSHER_APP_CLUSTER'),
-        'encrypted' => true
-    );
+    $options = [
+        'cluster'   => env('PUSHER_APP_CLUSTER'),
+        'encrypted' => true,
+    ];
     $pusher = new Pusher\Pusher(
         env('PUSHER_APP_ID'),
         env('PUSHER_APP_KEY'),
@@ -50,6 +49,6 @@ Route::get('pusher-back', function () {
 
     $data['message'] = 'hello world';
     $pusher->trigger('my-channel', 'my-event', $data);
-    echo "Pusher Back End";
+    echo 'Pusher Back End';
     dd($pusher);
 });
