@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return View('modular-js');
-});
+Route::view('/', 'modular-js');
 Route::get('/browserSync', 'BrowsersyncController@home');
 Route::get('/routeParameters/{id}/{name}', function ($param1, $param2) {
     echo '<p>Yes, you can can use different parameters than the ones defined on the route';
@@ -25,15 +23,12 @@ Route::get('/routes', function () {
     dd($routeCollection);
 });
 Route::get('/posts', 'VoyagerController@allPosts');
-Route::get('/tinymce', function () {
-    return View('tinymce');
-});
+Route::view('/tinymce', 'tinymce');
+
 Route::post('/tinymce', function (\Illuminate\Http\Request $request) {
     dd($request->input('mytextarea'));
 });
-Route::get('/modular-js', function () {
-    return View('modular-js');
-});
+Route::view('/modular-js', 'modular-js');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
