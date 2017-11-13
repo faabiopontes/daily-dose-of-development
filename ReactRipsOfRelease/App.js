@@ -1,8 +1,8 @@
 import firebase from 'firebase';
 import React, { Component } from 'react';
-import { AppRegistry, View, Teext, Button } from 'react-native';
+import { AppRegistry, StyleSheet, View, Text, Button } from 'react-native';
 
-class App extends Component {
+export default class App extends React.Component {
 
   componentWillMount() {
     // Initialize Firebase
@@ -19,12 +19,20 @@ class App extends Component {
 
   render() {
     return (
-      <View>
-        <Text>My App</Text>
+      <View style={styles.container}>
+        <Text>My React Native + Firebase app without Bugs</Text>
       </View>
     );
   }
-
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 AppRegistry.registerComponent('firebaseTest', () => App);
