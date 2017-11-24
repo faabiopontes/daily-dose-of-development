@@ -26,7 +26,7 @@
         "firebase": "^4.6.2",
         "mustache": "^2.3.0",
         "pusher-js": "^4.2.1",
-        "tinymce": "^4.7.2",
+        "tinymce": "^4.7.3",
         "vue-devtools": "^3.1.9"
     }
 }
