@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        if(env('FSP_USE_DB') == '1') {
+            Schema::defaultStringLength(191);
+        }
     }
 
     /**
