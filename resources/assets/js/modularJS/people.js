@@ -1,34 +1,36 @@
-// fully private now?
-var peopleModule = (function () {
-  var people = ["Fabio", "Pontes"];
+//people module
+(function () {
+  var people = ['Fabio', 'Pontes'];
 
-  // this.cacheDom();
+  //cache DOM
   var $el = $('#peopleModule');
   var $button = $el.find('button');
   var $input = $el.find('input');
   var $ul = $el.find('ul');
   var template = $el.find('#people-template').html();
 
-  // this.bindEvents();
-  $button.on('click', addPerson.bind(this));
-  $ul.delegate('i.del', 'click', deletePerson.bind(this));
+  //bind events
+  $button.on('click', addPerson);
+  $ul.delegate('i.del', 'click', deletePerson);
 
   _render();
 
   function _render() {
     $ul.html(Mustache.render(template, { people: people }));
-  };
-
-  function addPerson(eventOrName) {
-    var name = typeof eventOrName == "string" ? eventOrName : $input.val();
-    people.push(name);
-    $input.val('');
-    _render();
+    events.emit("peopleChanged", people.length);
   }
-  function deletePerson(eventOrNumber) {
+
+  function addPerson(value) {
+    var name = (typeof value === "string") ? value : $input.val();
+    people.push(name);
+    _render();
+    $input.val('');
+  }
+
+  function deletePerson(event) {
     var i;
-    if (typeof eventOrNumber === "number") {
-      i = eventOrNumber;
+    if (typeof event === "number") {
+      i = event;
     } else {
       var $remove = $(event.target).closest('li');
       i = $ul.find('li').index($remove);
@@ -37,24 +39,4 @@ var peopleModule = (function () {
     _render();
   }
 
-  return {
-    addPerson: addPerson,
-    deletePerson: deletePerson
-  };
 })();
-// people.init();
-
-var peoplePrivate = (function () {
-  // this is function scope
-
-  // this is a private variable
-  var privateName = 'pontes';
-
-  function sayPrivateName() {
-    alert(privateName);
-  }
-  return {
-    sayPrivateName: sayPrivateName
-  }
-})();
-// peoplePrivate.sayPrivateName();
