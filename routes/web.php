@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::view('select2', 'select2');
+
 /* Pusher */
 Route::view('pusher-front', 'pusher');
 Route::get('pusher-back', function () {

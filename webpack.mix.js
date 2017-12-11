@@ -23,6 +23,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
     'node_modules/pusher-js/dist/web/pusher.min.js',
     'resources/assets/js/pusher/script.js',
   ], 'public/js/pusher.js')
+  .scripts([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/select2/dist/js/select2.min.js',
+    'node_modules/select2/dist/js/i18n/pt-BR.js',
+    'resources/assets/js/appSelect2.js',
+  ], 'public/js/bundleSelect2.js')
+  .styles('node_modules/select2/dist/css/select2.min.css', 'public/css/bundleSelect2.css')
   .sourceMaps()
   .styles('resources/assets/css/modularJS.css', 'public/css/modularJS.css')
   .scripts('resources/assets/js/appTinyMCE.js', 'public/js/appTinyMCE.js')
