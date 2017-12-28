@@ -21,5 +21,6 @@
 
 ## Node.js Fundamentals (Note App)
 
-- Reading and Writing to Filesystem
-- Requiring files [...]
+Node has lots of built-in modules for things like: 
+- Requiring and using built-in modules like HTTP and NPM third-party modules
+- Doing things that were not possible with JavaScript
