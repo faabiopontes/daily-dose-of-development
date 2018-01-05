@@ -35,6 +35,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::view('select2', 'select2');
 
+Route::view('changeDom', 'change-dom');
+
 /* Pusher */
 Route::view('pusher-front', 'pusher');
 Route::get('pusher-back', function () {
