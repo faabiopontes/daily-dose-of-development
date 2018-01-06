@@ -11,7 +11,8 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix
+  // .js('resources/assets/js/app.js', 'public/js')
   .scripts([
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/mustache/mustache.min.js',
@@ -33,6 +34,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .sourceMaps()
   .styles('resources/assets/css/modularJS.css', 'public/css/modularJS.css')
   .scripts('resources/assets/js/appTinyMCE.js', 'public/js/appTinyMCE.js')
+  .scripts('resources/assets/js/appChangeDom.js', 'public/js/appChangeDom.js')
   .copyDirectory('node_modules/tinymce', 'public/plugins/tinymce')
   .sass('resources/assets/sass/app.scss', 'public/css')
   .disableNotifications()
