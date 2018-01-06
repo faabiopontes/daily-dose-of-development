@@ -6,7 +6,3 @@ module.exports.addNote = () => {
     console.log('addNote');
     return 'New note';
 }
-module.exports.addNumbers = (a, b) => {
-    return a + b;
-}
-// Everything on module.exports gets exported

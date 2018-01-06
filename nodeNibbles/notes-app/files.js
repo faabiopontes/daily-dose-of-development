@@ -2,8 +2,12 @@ console.log('Starting files.js');
 
 const fs = require('fs');
 const os = require('os');
-// Require is used to get built-in modules
-// All modules available are on the API
+const notes = require('./notes.js');
+// Require is used to get modules from the outside
+// There are there kinds of modules we can use
+// Built-in modules: All modules available are on the Node API
+// Our own modules: Files or modules created by us, like notes.js
+// Third-party modules: Like lodash or anything available on NPM
 
 function callbackAppendFile(err) {
     if (err) {
