@@ -23,7 +23,7 @@ var noteDuplicated = (notes, title) => {
     // var noteDuplicated = notes.filter((note) => {
     //     return note.title === title;
     // });
-    return notes.length !== 0;
+    return notes.length === 0;
 }
 
 var noteRemove = (notes, title) => {
@@ -31,6 +31,10 @@ var noteRemove = (notes, title) => {
     return notes;
 }
 
+var noteFind = (notes, title) => {
+    notes = notes.filter((note) => note.title === title);
+    return notes[0];
+}
 
 var addNote = (title, body) => {
     var notes = fetchNotes();
@@ -54,6 +58,9 @@ var getAll = () => {
 };
 var getNote = (title) => {
     console.log('Getting note', title);
+    var notes = fetchNotes();
+    var filteredNotes = noteFind(notes, title);
+    return filteredNotes;
 }
 var removeNote = (title) => {
     var notes = fetchNotes();
@@ -62,6 +69,11 @@ var removeNote = (title) => {
 
     return notes.length !== filteredNotes.length;
 }
+var logNote = (note) => {
+    console.log('---');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+};
 
 module.exports = {
     addNote,
@@ -70,5 +82,6 @@ module.exports = {
     // since the property is the same name as the variable defined
     getAll,
     getNote,
-    removeNote
+    removeNote,
+    logNote
 };

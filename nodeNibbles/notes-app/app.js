@@ -17,14 +17,18 @@ if (command === 'add') {
         console.log('The note title already exists!');
     } else {
         console.log('The program created the note sucessfully!');
-        console.log('---');
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
+        notes.logNote(note);
     }
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
-    notes.getNote(argv.title);
+    note = notes.getNote(argv.title);
+    if (typeof note === "undefined"){
+        console.log('Note not found');
+    } else {
+        console.log('Note found');
+        notes.logNote(note);
+    }
 } else if (command === 'remove') {
     var noteRemoved = notes.removeNote(argv.title);
     var message = noteRemoved ? 'Note removed sucessfully' : 'Note not found';
