@@ -13,7 +13,24 @@ var fetchNotes = () => {
 
 var saveNotes = (notes) => {
     fs.writeFileSync(__dirname + '/notes-data.json', JSON.stringify(notes));
+    return true;
 };
+
+var noteDuplicated = (notes, title) => {
+    notes = notes.filter((note) => note.title === title);
+    // When we are doing one verification
+    // The line above does the same as the lines below
+    // var noteDuplicated = notes.filter((note) => {
+    //     return note.title === title;
+    // });
+    return notes.length !== 0;
+}
+
+var noteRemove = (notes, title) => {
+    notes = notes.filter((note) => note.title !== title);
+    return notes;
+}
+
 
 var addNote = (title, body) => {
     var notes = fetchNotes();
@@ -22,15 +39,7 @@ var addNote = (title, body) => {
         body
     };
 
-
-
-    var duplicateNotes = notes.filter((note) => note.title === title);
-    // When we are doing one verification
-    // The line above does the same as the lines below
-    // var duplicateNotes = notes.filter((note) => {
-    //     return note.title === title;
-    // });
-    if (duplicateNotes.length === 0) {
+    if (noteDuplicated(notes, title) === true) {
         console.log('Adding note', title, body);
         notes.push(note);
         saveNotes(notes);
@@ -47,7 +56,11 @@ var getNote = (title) => {
     console.log('Getting note', title);
 }
 var removeNote = (title) => {
-    console.log('Removing note', title);
+    var notes = fetchNotes();
+    var filteredNotes = noteRemove(notes, title);
+    saveNotes(filteredNotes);
+
+    return notes.length !== filteredNotes.length;
 }
 
 module.exports = {
