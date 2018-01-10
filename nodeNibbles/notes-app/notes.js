@@ -70,6 +70,10 @@ var removeNote = (title) => {
     return notes.length !== filteredNotes.length;
 }
 var logNote = (note) => {
+    // Break on this line and use REPL to output note
+    // Use read command with --title
+    // node inspect app.js read --title="things to do"
+    debugger;
     console.log('---');
     console.log(`Title: ${note.title}`);
     console.log(`Body: ${note.body}`);
