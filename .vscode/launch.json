@@ -14,6 +14,12 @@
                 "--title='Teste'",
                 "--body='Starting from Debugger'"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Express Quick Start",
+            "program": "${workspaceFolder}/nodeNibbles/express-quick-start/bin/www"
         }
     ]
 }
