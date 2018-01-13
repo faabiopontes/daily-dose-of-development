@@ -3,34 +3,59 @@ const _ = require('lodash');
 const yargs = require('yargs');
 
 const notes = require('./notes.js');
+const titleOptions = {
+  describe: 'Title of the note',
+  demand: true,
+  alias: 't'
+};
+const bodyOptions = {
+  describe: 'Body of the note',
+  demand: true,
+  alias: 'b'
+};
 
-const argv = yargs.argv;
+const argv = yargs
+  .command('add', 'Add a new note', {
+    title: titleOptions,
+    body: bodyOptions
+  })
+  .command('list', 'List all notes')
+  .command('read', 'Read a note', {
+    title: titleOptions
+  }
+  )
+  .command('remove', 'Remove a note', {
+    title: titleOptions
+  }
+  )
+  .help()
+  .argv;
 var command = argv._[0];
 
 if (command === 'add') {
-    var note = notes.addNote(argv.title, argv.body);
-    if (typeof note === "undefined") {
-        console.log('The note title already exists!');
-    } else {
-        console.log('The program created the note sucessfully!');
-        notes.logNote(note);
-    }
+  var note = notes.addNote(argv.title, argv.body);
+  if (typeof note === "undefined") {
+    console.log('The note title already exists!');
+  } else {
+    console.log('The program created the note sucessfully!');
+    notes.logNote(note);
+  }
 } else if (command === 'list') {
-    var allNotes = notes.getAll();
-    console.log(`Printing ${allNotes.length} note(s)`);
-    allNotes.forEach((note) => notes.logNote(note));
+  var allNotes = notes.getAll();
+  console.log(`Printing ${allNotes.length} note(s)`);
+  allNotes.forEach((note) => notes.logNote(note));
 } else if (command === 'read') {
-    note = notes.getNote(argv.title);
-    if (typeof note === "undefined"){
-        console.log('Note not found');
-    } else {
-        console.log('Note found');
-        notes.logNote(note);
-    }
+  note = notes.getNote(argv.title);
+  if (typeof note === "undefined") {
+    console.log('Note not found');
+  } else {
+    console.log('Note found');
+    notes.logNote(note);
+  }
 } else if (command === 'remove') {
-    var noteRemoved = notes.removeNote(argv.title);
-    var message = noteRemoved ? 'Note removed sucessfully' : 'Note not found';
-    console.log(message);
+  var noteRemoved = notes.removeNote(argv.title);
+  var message = noteRemoved ? 'Note removed sucessfully' : 'Note not found';
+  console.log(message);
 } else {
-    console.log('Command not recognized');
+  console.log('Command not recognized');
 }
