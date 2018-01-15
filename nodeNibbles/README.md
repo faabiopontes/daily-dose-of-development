@@ -21,6 +21,18 @@
 
 ## Node.js Fundamentals (Note App)
 
-Node has lots of built-in modules for things like: 
+Node has lots of built-in modules for things like:
 - Requiring and using built-in modules like HTTP and NPM third-party modules
 - Doing things that were not possible with JavaScript
+
+## Call Stack & Event Loop
+
+In node we have our Call Stack, that is our stack of calls to be made
+
+If we use asynchronous calls, they go to the Node APIs, but the Call Stack continues on
+
+When the timeout ends, the callback goes to Callback Queue
+
+The Callback Queue is executed after the main() is ended and we have nothing on our Call Stack
+
+That makes a setTimeout with 0 delay execute after all the lines, even though our timeout is 0
