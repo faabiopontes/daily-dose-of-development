@@ -12,7 +12,8 @@
             "args": [
                 "add",
                 "--title='Teste'",
-                "--body='Starting from Debugger'"
+                "--body='Starting from Debugger'",
+                "--address='1301 lombard'"
             ]
         },
         {
