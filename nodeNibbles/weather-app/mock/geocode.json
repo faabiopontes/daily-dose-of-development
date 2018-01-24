@@ -1,0 +1,65 @@
+
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "90540-001",
+               "short_name" : "90540-001",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Auxiliadora",
+               "short_name" : "Auxiliadora",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Porto Alegre",
+               "short_name" : "Porto Alegre",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "State of Rio Grande do Sul",
+               "short_name" : "RS",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brazil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Auxiliadora, Porto Alegre - RS, 90540-001, Brazil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -30.0089801,
+                  "lng" : -51.1716106
+               },
+               "southwest" : {
+                  "lat" : -30.0223841,
+                  "lng" : -51.2056075
+               }
+            },
+            "location" : {
+               "lat" : -30.0192482,
+               "lng" : -51.1954874
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -30.0172047,
+                  "lng" : -51.1833767
+               },
+               "southwest" : {
+                  "lat" : -30.0223841,
+                  "lng" : -51.2056075
+               }
+            }
+         },
+         "place_id" : "ChIJM5SC-MV5GZUReSc_l5TlfFA",
+         "types" : [ "postal_code" ]
+      }
+   ],
+   "status" : "OK"
+}
