@@ -56,3 +56,5 @@ Route::get('pusher-back', function () {
     echo 'Pusher Back End';
     dd($pusher);
 });
+
+Route::view('nunjucks', 'nunjucks');
