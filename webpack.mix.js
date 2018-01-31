@@ -30,6 +30,10 @@ mix
     'node_modules/select2/dist/js/i18n/pt-BR.js',
     'resources/assets/js/appSelect2.js',
   ], 'public/js/bundleSelect2.js')
+  .scripts([
+    'node_modules/nunjucks/browser/nunjucks.js',
+    'resources/assets/js/appNunjucks.js',
+  ], 'public/js/appNunjucks.js')
   .styles('node_modules/select2/dist/css/select2.min.css', 'public/css/bundleSelect2.css')
   .sourceMaps()
   .styles('resources/assets/css/modularJS.css', 'public/css/modularJS.css')

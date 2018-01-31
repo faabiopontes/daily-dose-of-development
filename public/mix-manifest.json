@@ -3,6 +3,7 @@
     "/js/modularJS.js": "/js/modularJS.js",
     "/js/pusher.js": "/js/pusher.js",
     "/js/bundleSelect2.js": "/js/bundleSelect2.js",
+    "/js/appNunjucks.js": "/js/appNunjucks.js",
     "/css/bundleSelect2.css": "/css/bundleSelect2.css",
     "/css/modularJS.css": "/css/modularJS.css",
     "/js/appTinyMCE.js": "/js/appTinyMCE.js",
