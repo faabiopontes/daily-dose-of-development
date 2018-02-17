@@ -38,10 +38,3 @@ request({
     console.log('Unable to fetch weather.');
   }
 });
-
-// Forecast Request
-// https://api.darksky.net/forecast/[key]/[latitude],[longitude]
-// https://api.darksky.net/forecast/4eca276784134e501dbf3f8296d80890/-30.0192482,-51.1954874
-
-// Forecast Key
-// 4eca276784134e501dbf3f8296d80890
