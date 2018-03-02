@@ -17,3 +17,4 @@ And then getting weather information using Forecast API (DarkSky API).
 - Promises can only be resolved or rejected
 - Promises.then() can receive two callback function for when it's resolved or rejected
 - Promises().then().catch() can be used so we don't have to handle every reject
+- Promises can return a Promise as well so we can chain a Promise with another easily

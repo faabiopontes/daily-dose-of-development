@@ -10,10 +10,7 @@
             "name": "Launch Program",
             "program": "${file}",
             "args": [
-                "add",
-                "--title='Teste'",
-                "--body='Starting from Debugger'",
-                "--address='1301 lombard'"
+                "-a 9559900000"
             ]
         },
         {
