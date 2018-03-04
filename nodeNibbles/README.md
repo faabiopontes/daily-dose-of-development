@@ -3,10 +3,10 @@
 - The code can be blocking or non-blocking
 - Request should always be non-blocking so the app doesn't lock because of some request
 
-| Type of Code | Threads? |
+| Type of Code | Threads?      |
 | :----------: | :-----------: |
-| non-blocking | multi-thread |
-| blocking | single-thread |
+| non-blocking | multi-thread  |
+| blocking     | single-thread |
 
 - NPM: Generic problems already have solution by some package that is used by thousands of users
 - Node is non-blocking since the beginning, so NPM Packages following this principle as well
@@ -36,3 +36,16 @@ When the timeout ends, the callback goes to Callback Queue
 The Callback Queue is executed after the main() is ended and we have nothing on our Call Stack
 
 That makes a setTimeout with 0 delay execute after all the lines, even though our timeout is 0
+
+## Functions
+- JSON.stringify(jsonObject, undefined, 2): returns a JSON string with break lines and indentation
+- A Callback can be a named function or a inner function (closure)
+
+## Promises
+- Promises can only be resolved or rejected
+- Promises.then() can receive two callback function for when it's resolved or rejected
+- Promises().then().catch() can be used so we don't have to handle every reject
+- Promises can return a Promise as well so we can chain a Promise with another easily
+
+## Web Server
+- Express handles a lot of things for us, like returning a object like a valid JSON string

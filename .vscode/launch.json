@@ -9,9 +9,6 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${file}",
-            "args": [
-                "-a 9559900000"
-            ]
         },
         {
             "type": "node",
