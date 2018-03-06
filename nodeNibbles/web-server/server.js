@@ -4,17 +4,21 @@ const hbs = require('hbs');
 var app = express();
 var port = 3000;
 
+
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
 app.use(express.static(__dirname + '/public'));
 
+hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerHelper('getCurrentYear', () => {
+  return new Date().getFullYear()
+});
+hbs.registerHelper('screamIt', (string) => {
+  return string.toUpperCase();
+});
+
 app.get('/', (req, res) => {
-  // res.send('<h1>Hello Express!</h1>');
-  // reace this to a call to res.render
-  // brand new home.hbs
-  // inside we are going to have the same properties below
-  // plus welcome message
   res.render('home.hbs', {
     pageTitle: 'Home Page',
     currentYear: new Date().getFullYear(),
@@ -38,6 +42,5 @@ app.get('/bad', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log('Server is up and running on port ' + port);
+  console.log('Server is up and running on port', port, 'Seconds:', new Date().getSeconds());
 });
-console.log('Server is running');
