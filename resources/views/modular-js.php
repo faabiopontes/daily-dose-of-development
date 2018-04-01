@@ -8,7 +8,7 @@
     <title>JS Tutorials</title>
 </head>
 <body>
-    
+
     <div class="container">
         <h3>Some ground rules for Module development</h3>
         <ul>

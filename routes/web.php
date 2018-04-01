@@ -22,16 +22,16 @@ Route::get('/routes', function () {
     $routeCollection = Route::getRoutes();
     dd($routeCollection);
 });
-Route::get('/posts', 'VoyagerController@allPosts');
+//Route::get('/posts', 'VoyagerController@allPosts');
 Route::view('/tinymce', 'tinymce');
 
 Route::post('/tinymce', function (\Illuminate\Http\Request $request) {
     dd($request->input('mytextarea'));
 });
 Route::view('/modular-js', 'modular-js');
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+// Route::group(['prefix' => 'admin'], function () {
+//     Voyager::routes();
+// });
 
 Route::view('select2', 'select2');
 
