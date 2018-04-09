@@ -49,3 +49,8 @@ That makes a setTimeout with 0 delay execute after all the lines, even though ou
 
 ## Web Server
 - Express handles a lot of things for us, like returning a object like a valid JSON string
+
+### Middleware
+- Kind of handles the requests, serving as a "middle" between the request and the response
+- We can use middlewares to make routes available only when users are logged in, or for logging things so we don't have to add code to every method, just make it use the middleware
+- The middlewares are executed the order they are declared
