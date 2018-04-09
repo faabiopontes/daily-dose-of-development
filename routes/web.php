@@ -37,6 +37,12 @@ Route::view('select2', 'select2');
 
 Route::view('changeDom', 'change-dom');
 
+// Udemy PHP with Laravel for Beginners
+Route::get('post/{id}/{name}/{password}', 'PostsController@show_post');
+
+Route::view('contact', 'udemy.contact');
+Route::view('post', 'udemy.post');
+
 /* Pusher */
 Route::view('pusher-front', 'pusher');
 Route::get('pusher-back', function () {
