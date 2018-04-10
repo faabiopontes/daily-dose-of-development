@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Contact Page</h1>
-  @if(count($peoples)
+  @if(count($peoples))
     <ul>
     @foreach($peoples as $people)
       <li>{{$people}}</li>
