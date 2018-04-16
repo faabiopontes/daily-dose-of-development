@@ -50,6 +50,12 @@ That makes a setTimeout with 0 delay execute after all the lines, even though ou
 ## Web Server
 - Express handles a lot of things for us, like returning a object like a valid JSON string
 
+### HTTP
+- The HTTP module is responsible for creating the web server
+- The function createServer has two parameters: request (req), and response (res)
+- The request parameter contains all the information from the request made to the server
+- The response parameter contains the object from the response, we can change the headers and body from it using the predefined functions from this object
+
 ### Middleware
 - Kind of handles the requests, serving as a "middle" between the request and the response
 - We can use middlewares to make routes available only when users are logged in, or for logging things so we don't have to add code to every method, just make it use the middleware
