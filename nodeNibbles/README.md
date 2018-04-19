@@ -47,8 +47,10 @@ That makes a setTimeout with 0 delay execute after all the lines, even though ou
 - Promises().then().catch() can be used so we don't have to handle every reject
 - Promises can return a Promise as well so we can chain a Promise with another easily
 
-## Web Server
+## Express Web Server
 - Express handles a lot of things for us, like returning a object like a valid JSON string
+- Routing
+- Middlewares
 
 ### HTTP
 - The HTTP module is responsible for creating the web server
