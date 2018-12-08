@@ -39,3 +39,14 @@
 - react
 - react-dom
 - react-scripts: Somehow related to create-react-app, does some Babel work
+
+## 3. What are Components?
+- index.js: Is the first file executed by the React app
+- import React from 'react': Is necessary to use JSX (App />) into component
+- ReactDOM.render: Is called only once through our app, serves to render our first component. Render
+- <div id="root"></div>: Is on our index.html and serves as a root component for our VDOM tree
+- class App extends Component: Our class becomes a component when extending Component from "react". This makes us able to do call <App /> as if our class is a HTML tag
+- What is a component? A isolated mix of structure (HTML), functionality (JS, events), and styling (CSS)
+- Using a basic HTML page as example, our Header, Body, and Footer would all be components
+- The render() method is mandatory to all Components. It returns a JSX content
+- On JSX we use className instead of class, because class is a JS reserved word
