@@ -81,3 +81,8 @@
   - display: flex: Tells the browser that the element is going to use the display type of flex
   - justify-content: center: Tells the browser that the elements inside our element are going to be align on the center horizontally
   - align-items: center: Tells the browser that the elements inside our element are going to be align on the center vertically
+
+## 8. Prev/Next Page
+- We can add styling for specific atributes of the element like disabled
+- Element events on React don't need quotes. If you add quotes React will see then as strings instead of functions
+- The rest parameter (... productInfo) becomes an array with all the remaining elements of the object
