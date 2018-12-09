@@ -67,3 +67,8 @@
 - The lyfe-cycle methods execute automatically
 - async await is used to make async requests with less code
 - Watch JavaScript ES6 course for more information about async await
+
+## 6. Storing on State
+- this.setState: Changes our component state.
+- When our component state changes the function render() is called again
+- The JS map function makes it easy to go through the products array and something for each element
