@@ -56,3 +56,14 @@
 - We use 'stateless components' when we only have a render function inside our component
 - Every HTML, CSS, JS related to our component goes inside each component folder
 - He apply some styles in a styles.css file inside our src folder to kind of "reset" each browser CSS
+
+## 5. Getting products from API
+- We use the axios package to make requests
+- The logic to make requests doesn't go on the App.js
+- Named functions are used to functions that belong to React
+- Arrow function is used to function that are created by us, to make the 'this' scope equal to the outside of the function
+- React has life-cycle methods:
+  - componentDidMount(): executed after the component is shown on the screen
+- The lyfe-cycle methods execute automatically
+- async await is used to make async requests with less code
+- Watch JavaScript ES6 course for more information about async await

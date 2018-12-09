@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
+import api from './services/api';
+
 import './styles.css';
+
+import Header from './components/Header';
+import Main from './pages/main';
 
 const App = () => (
   <div className="App">
-    <Header/>
+    <Header />
+    <Main />
   </div>
 );
 
