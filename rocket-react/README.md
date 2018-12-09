@@ -50,3 +50,9 @@
 - Using a basic HTML page as example, our Header, Body, and Footer would all be components
 - The render() method is mandatory to all Components. It returns a JSX content
 - On JSX we use className instead of class, because class is a JS reserved word
+
+## 4. Creating Header
+- const Header = () => (): When we do like this we are using the concept 'stateless components'.
+- We use 'stateless components' when we only have a render function inside our component
+- Every HTML, CSS, JS related to our component goes inside each component folder
+- He apply some styles in a styles.css file inside our src folder to kind of "reset" each browser CSS
