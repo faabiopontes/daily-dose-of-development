@@ -72,3 +72,12 @@
 - this.setState: Changes our component state.
 - When our component state changes the function render() is called again
 - The JS map function makes it easy to go through the products array and something for each element
+
+## 7. Listing Products
+- We transform our h1 into a article with data from the products
+- Added styling to the card using our component styles.css file
+- We don't have to import {Component} if we are using the const method of declarating a component
+- Display flex basics:
+  - display: flex: Tells the browser that the element is going to use the display type of flex
+  - justify-content: center: Tells the browser that the elements inside our element are going to be align on the center horizontally
+  - align-items: center: Tells the browser that the elements inside our element are going to be align on the center vertically
