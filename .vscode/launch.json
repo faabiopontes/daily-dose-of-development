@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Rocket ES6",
-      "program": "${workspaceFolder}/rocket-es6/dist/main.js"
+      "program": "${workspaceFolder}/rocket-es6/dist/index.js"
     },
     {
       "type": "node",
