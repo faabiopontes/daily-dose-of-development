@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Watch Rocket ES6",
+            "command": "C:/www/daily-dose-of-development/rocket-es6/node_modules/.bin/babel",
+            "args": ["rocket-es6/src", "--out-dir", "rocket-es6/dist", "-w", "--source-maps"],
+            "type": "shell",
+            "group": { "kind": "build", "isDefault": true },
+            "isBackground": true
+        }
+    ]
+}
