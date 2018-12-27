@@ -2,18 +2,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const getButtonText = () => 'Click on me!';
+// const getButtonText = () => 'Click on me!';
 
 // Create a React Component
-const App = () => (
-  <div>
-    <label className="label" for="name">Enter name:</label>
-    <input id="name" type="text" />
-    <button style={{ backgroundColor: 'blue', color: 'white' }}>
-      {getButtonText()}
-    </button>
-  </div>
-);
+const App = () => {
+  const buttonText = { text: 'Click me' };
+  const style = { backgroundColor: 'blue', color: 'white' };
+  const labelText = 'Enter name:';
+
+  return (
+    <div>
+      <label className="label" for="name">{labelText}</label>
+      <input id="name" type="text" />
+      <button style={style}>
+        {buttonText.text}
+      </button>
+    </div>
+  )
+};
 // the above line is converted to the line below using the Babel preset react
 // they are essentially the same thing
 // const App = () => React.createElement("div", null, "Hi there!");
