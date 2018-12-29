@@ -31,3 +31,12 @@ Learning about Class-Bases Components while we develop a app that gets the user 
   - Must be a Javascript Class
   - Must extend (subclass)
   - Must define a 'render' method that returns some amount of JSX
+
+## Rules of State
+  - Only usable with class components
+  - Technically can be used with functional components using the 'hooks' system
+  - You will confuse props with state
+  - 'State' is a JS object that contains data relevant to a component
+  - Updating 'state' on a component causes the component to rerender
+  - State must be initialized when a component is created
+  - State can **only** be updated using the function 'setState'
