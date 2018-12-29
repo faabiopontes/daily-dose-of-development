@@ -17,3 +17,11 @@ Learning about Class-Bases Components while we develop a app that gets the user 
   - Understands lifecycle events
   - Easier to handle user input
   - Easier to do things when the app first starts
+
+## Geolocation Timeline
+  - JS File loaded by browser
+  - App component gets created
+  - We call geolocation service
+  - App returns JSX, gets render to page as HTML
+  - [...]
+  - After some time we get the results of Geolocation, since the service is asynchronous
