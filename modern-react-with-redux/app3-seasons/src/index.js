@@ -1,16 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 class App extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+
+    this.state = { lat: 40, long: 10 };
+
     window.navigator.geolocation.getCurrentPosition(
-      position => console.log(position),
+      position => {
+        this.setState({ lat: position.coords.latitude });
+      },
       err => console.log(err)
     );
+  }
+
+  // React says we have to define render!!
+  render() {
     return (
-      <div>Hi there!</div>
+      <div>
+        <p>Latitude: {this.state.lat}</p>
+        <p>Longitude: {this.state.long}</p>
+      </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
