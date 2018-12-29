@@ -25,3 +25,9 @@ Learning about Class-Bases Components while we develop a app that gets the user 
   - App returns JSX, gets render to page as HTML
   - [...]
   - After some time we get the results of Geolocation, since the service is asynchronous
+  - Tell the component to rerender itself with this new information
+
+## Rules of Class Components
+  - Must be a Javascript Class
+  - Must extend (subclass)
+  - Must define a 'render' method that returns some amount of JSX
