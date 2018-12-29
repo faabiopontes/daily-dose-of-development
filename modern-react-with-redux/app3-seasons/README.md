@@ -21,15 +21,21 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 - Easier to handle user input
 - Easier to do things when the app first starts
 
-## Geolocation Timeline
+## App Seasons Timeline
 
 - JS File loaded by browser
 - App component gets created
+- App components 'constructor' function gets called
+- State object is created and assigned to the 'this.state' property
 - We call geolocation service
+- React calls the components render method
 - App returns JSX, gets render to page as HTML
 - [...]
-- After some time we get the results of Geolocation, since the service is asynchronous
-- Tell the component to rerender itself with this new information
+- We get result of geolocation
+- We update our state object with a call to 'this.setState'
+- React sees that we updated the state of a component
+- React calls our 'render' method a second time
+- Render method returns some (updated) JSX
 
 ## Rules of Class Component
 
