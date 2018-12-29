@@ -52,6 +52,7 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 - Updating 'state' on a component causes the component to rerender
 - State must be initialized when a component is created
 - State can **only** be updated using the function 'setState'
+- The only time we directly assign the state is on the constructor method
 - setState only updates the attributes we send on the object calling the function
 
 ## Rules of Constructor
