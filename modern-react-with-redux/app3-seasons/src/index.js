@@ -20,6 +20,7 @@ class App extends React.Component {
 
   // React says we have to define render!!
   render() {
+    console.log("My component render function was called");
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -27,6 +28,14 @@ class App extends React.Component {
       return <div>Latitude: {this.state.lat}</div>;
     }
     return <div>Loading!</div>;
+  }
+
+  componentDidMount() {
+    console.log("My component was rendered to the screen");
+  }
+
+  componentDidUpdate() {
+    console.log("My component was just updated - it rerendered!");
   }
 }
 

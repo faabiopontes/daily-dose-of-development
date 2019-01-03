@@ -61,3 +61,14 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 - When we override the default React.Component constructor method we should always call 'super(props);' as the first line of the method
 - When we call 'super(props' we are calling the constructor method from the parent class (React.Component)
 - Before the 'super(props)' the 'this' context doesn't exist
+
+## Component Lifecycle
+
+1. constructor()
+2. render(): Is called after constructor and every time the component changes, before the componentDidUpdate method
+3. Content is now visible on screen
+4. componentDidMount(): Is called after the initial rendering of the component
+5. Sit and wait for updates, usually when state changes
+6. componentDidUpdate(): Is called after the component is rerendered
+7. Sit and wait until this component is not longer shown
+8. componentWIllUnmount(): Is called before the component will not be shown anymore on the screen
