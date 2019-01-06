@@ -35,7 +35,22 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("My component was just updated - it rerendered!");
+    console.log("My component was just updated - it re-rendered!");
+  }
+
+  shouldComponentUpdate() {
+    console.log("My component is considering if it should be re-rendered or not");
+    return true;
+  }
+
+  static getDerivedStateFromProps(state) {
+    console.log("getDerivedStateFromProps",state);
+    return state
+  }
+
+  getSnapshotBeforeUpdate(state) {
+    console.log("getSnapshotBeforeUpdate",state);
+    return state;
   }
 }
 
