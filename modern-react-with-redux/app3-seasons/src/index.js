@@ -2,11 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { lat: null, long: null, errorMessage: "" };
-  }
+  state = { lat: null, long: null, errorMessage: "" };
 
   // React says we have to define render!!
   render() {
@@ -34,17 +30,19 @@ class App extends React.Component {
   }
 
   shouldComponentUpdate() {
-    console.log("My component is considering if it should be re-rendered or not");
+    console.log(
+      "My component is considering if it should be re-rendered or not"
+    );
     return true;
   }
 
   static getDerivedStateFromProps(state) {
-    console.log("getDerivedStateFromProps",state);
-    return state
+    console.log("getDerivedStateFromProps", state);
+    return state;
   }
 
   getSnapshotBeforeUpdate(state) {
-    console.log("getSnapshotBeforeUpdate",state);
+    console.log("getSnapshotBeforeUpdate", state);
     return state;
   }
 }
