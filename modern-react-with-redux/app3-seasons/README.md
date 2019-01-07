@@ -64,11 +64,11 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 
 ## Component Lifecycle
 
-1. constructor()
-2. render(): Is called after constructor and every time the component changes, before the componentDidUpdate method
+1. constructor(): Good place to do one-time setup, initialization
+2. render(): Is called after constructor and every time the component changes, before the componentDidUpdate method. Avoid doing anything besides returning JSX. Don't make API requests here
 3. Content is now visible on screen
-4. componentDidMount(): Is called after the initial rendering of the component
+4. componentDidMount(): Is called after the initial rendering of the component. Good place to data loading. Although we could do it on the constructor method, the community recommends doing it here
 5. Sit and wait for updates, usually when state changes
-6. componentDidUpdate(): Is called after the component is rerendered
+6. componentDidUpdate(): Is called after the component is rerendered. Good place to do more data-loading when state/props change. Like doing requests every time a component is updated.
 7. Sit and wait until this component is not longer shown
-8. componentWIllUnmount(): Is called before the component will not be shown anymore on the screen
+8. componentWIllUnmount(): Is called before the component will not be shown anymore on the screen. Good place to do cleanup (especially for non-React stuff)

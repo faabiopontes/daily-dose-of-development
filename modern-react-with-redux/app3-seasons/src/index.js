@@ -4,21 +4,7 @@ import ReactDOM from "react-dom";
 import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { lat: null, long: null, errorMessage: "" };
-
-    window.navigator.geolocation.getCurrentPosition(
-      position => {
-        this.setState({ lat: position.coords.latitude });
-      },
-      err => {
-        console.log(err);
-        this.setState({ errorMessage: err.message });
-      }
-    );
-  }
+  state = { lat: null, long: null, errorMessage: "" };
 
   // React says we have to define render!!
   render() {
@@ -34,10 +20,32 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("My component was rendered to the screen");
+
+    window.navigator.geolocation.getCurrentPosition(
+      position => this.setState({ lat: position.coords.latitude }),
+      err => this.setState({ errorMessage: err.message })
+    );
   }
 
   componentDidUpdate() {
-    console.log("My component was just updated - it rerendered!");
+    console.log("My component was just updated - it re-rendered!");
+  }
+
+  shouldComponentUpdate() {
+    console.log(
+      "My component is considering if it should be re-rendered or not"
+    );
+    return true;
+  }
+
+  static getDerivedStateFromProps(state) {
+    console.log("getDerivedStateFromProps", state);
+    return state;
+  }
+
+  getSnapshotBeforeUpdate(state) {
+    console.log("getSnapshotBeforeUpdate", state);
+    return state;
   }
 }
 
