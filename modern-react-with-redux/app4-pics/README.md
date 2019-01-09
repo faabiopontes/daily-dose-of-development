@@ -9,3 +9,10 @@
 - onClick: If user clicks on something
 - onChange: User changes text in an input
 - onSubmit: User submits a form
+
+## Event Flow
+1. User types in input
+2. Callback gets invoked
+3. We call setState with the new value
+4. Component rerenders
+5. Input is told what its value is (coming from state)
