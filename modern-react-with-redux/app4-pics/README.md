@@ -16,3 +16,6 @@
 3. We call setState with the new value
 4. Component rerenders
 5. Input is told what its value is (coming from state)
+
+## Understanding 'this' in Javascript
+- In 95% of the cases, **this** is related to the object to left when invoking the function, not when the function is attributed to some variable or element as callback
