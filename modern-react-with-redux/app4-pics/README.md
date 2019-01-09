@@ -19,3 +19,13 @@
 
 ## Understanding 'this' in Javascript
 - In 95% of the cases, **this** is related to the object to left when invoking the function, not when the function is attributed to some variable or element as callback
+
+## Ways to Solve Context Issues
+- Binding the context to function on the constructor:
+  - Code: this.functionName = this.functionName.bind(this)
+- Transforming our function into a arrow function
+  - From: onElementEvent(event) {  }
+  - To: onElementEvent = (event) => {  }
+- Arrow function invoking function:
+  - From: {this.onElementEvent}
+  - To: {e => this.onElementEvent()}
