@@ -1,5 +1,13 @@
 import React from "react";
 
-const App = () => <p>Pics App</p>;
+import SearchBar from "./SearchBar";
+
+const App = () => {
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  );
+};
 
 export default App;
