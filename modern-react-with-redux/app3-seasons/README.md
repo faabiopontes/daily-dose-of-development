@@ -16,9 +16,9 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 
 - Good for just about everything else
 - Easier code organization
-- Can use 'state' (another React system)
-- Understands lifecycle events
+- Can use **state**
 - Easier to handle user input
+- Understands lifecycle events
 - Easier to do things when the app first starts
 
 ## App Seasons Timeline
@@ -40,8 +40,8 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 ## Rules of Class Component
 
 - Must be a Javascript Class
-- Must extend (subclass)
-- Must define a 'render' method that returns some amount of JSX
+- Must extend, or be a subclass, of React.Component
+- Must define a **render** method that returns some amount of JSX
 
 ## Rules of State
 
@@ -51,16 +51,16 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 - 'State' is a JS object that contains data relevant to a component
 - Updating 'state' on a component causes the component to rerender
 - State must be initialized when a component is created
-- State can **only** be updated using the function 'setState'
+- State can **only** be updated using the function **setState**
 - The only time we directly assign the state is on the constructor method
 - setState only updates the attributes we send on the object calling the function
 
 ## Rules of Constructor
 
 - Is the first method called when the class is instantiated
-- When we override the default React.Component constructor method we should always call 'super(props);' as the first line of the method
+- When we override the default React.Component constructor method we should always call **super(props)** as the first line of the method
 - When we call 'super(props' we are calling the constructor method from the parent class (React.Component)
-- Before the 'super(props)' the 'this' context doesn't exist
+- Before the 'super(props)' the **this** context doesn't exist
 
 ## Component Lifecycle
 
@@ -72,3 +72,4 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 6. componentDidUpdate(): Is called after the component is rerendered. Good place to do more data-loading when state/props change. Like doing requests every time a component is updated.
 7. Sit and wait until this component is not longer shown
 8. componentWIllUnmount(): Is called before the component will not be shown anymore on the screen. Good place to do cleanup (especially for non-React stuff)
+9. There are other lifecycle methods, but they are rarely used. And should only be used when the methods at hand are not enough
