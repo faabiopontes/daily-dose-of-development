@@ -49,11 +49,12 @@ Learning about Class-Bases Components while we develop a app that gets the user 
 - Technically can be used with functional components using the 'hooks' system
 - You will confuse props with state
 - 'State' is a JS object that contains data relevant to a component
+- Since it's a object, it should be used with **this.state.attribute**
 - Updating 'state' on a component causes the component to rerender
-- State must be initialized when a component is created
+- State must be initialized when a component is created, it can be on the constructor method or just below the component creation with **state = { attr: value }**
 - State can **only** be updated using the function **setState**
 - The only time we directly assign the state is on the constructor method
-- setState only updates the attributes we send on the object calling the function
+- The function setState receives a object, and only updates the attributes we send on said object
 
 ## Rules of Constructor
 
