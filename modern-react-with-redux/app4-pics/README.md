@@ -29,3 +29,13 @@
 - Arrow function invoking function:
   - From: {this.onElementEvent}
   - To: {e => this.onElementEvent()}
+
+## Axios VS Fetch
+- Axios:
+  - 3rd party package
+  - Plug-and-play
+  - Less code to write
+- Fetch:
+  - Function built into modern browsers
+  - Have some caveats and needs more work
+  - More core to write

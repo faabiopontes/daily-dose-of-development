@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react';
+import axios from 'axios';
 
-import SearchBar from "./SearchBar";
+import SearchBar from './SearchBar';
 
 class App extends React.Component {
   onSearchSubmit(term) {
