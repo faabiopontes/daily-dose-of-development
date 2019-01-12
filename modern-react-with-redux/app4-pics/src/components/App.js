@@ -9,14 +9,13 @@ class App extends React.Component {
   // With Promises
   // onSearchSubmit = term => {
   //   this.doSearchRequest(term).then(response => {
-  //     console.log(response.data.results);
+  //     this.setState({ images: response.data.results });
   //   });
   // };
 
   // With Async Await
   onSearchSubmit = async term => {
     const response = await this.doSearchRequest(term);
-    console.log(response.data.results);
     this.setState({ images: response.data.results });
   };
 
