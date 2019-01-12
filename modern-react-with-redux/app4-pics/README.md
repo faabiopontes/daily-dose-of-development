@@ -5,6 +5,15 @@
 - Need to use that search to make a request to an outside API and fetch data
 - Need to take the fetched images and show them on the screen in a list
 
+## App Timeline
+1. Component renders itself one time with no list of images
+2. onSearchSubmit method called
+3. Request made to Unsplash
+4. [ ... wait ... ]
+5. Request complete
+6. Set image data on state of App component
+7. App component rerenders and shows images
+
 ## Basic Event Handlers
 - onClick: If user clicks on something
 - onChange: User changes text in an input
