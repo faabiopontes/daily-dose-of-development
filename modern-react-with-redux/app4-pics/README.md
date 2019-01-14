@@ -48,3 +48,6 @@
   - Function built into modern browsers
   - Have some caveats and needs more work
   - More core to write
+
+## The Purpose of Keys in Lists in React
+- With the key prop on a element we help React to understand what items should be added or updated
