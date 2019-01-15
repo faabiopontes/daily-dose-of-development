@@ -51,3 +51,14 @@
 
 ## The Purpose of Keys in Lists in React
 - With the key prop on a element we help React to understand what items should be added or updated
+- The key is supposed to go on every iterator or array, so it might not go on the direct element we are rendering
+
+## Accesing the DOM with Refs
+1. Let the ImageCard render itself and its image
+2. Reach into the DOM and figure out the height of the image
+3. Set the image height on state to get the component to rerender
+4. When rerendering, assign a 'grid-row-end' to make sure the image takes up the appropriate space
+
+## React Refs
+- Gives access to a single DOM element
+- We create refs in the constructor, assign them to instance variables, then pass to a particular JSX element as props
