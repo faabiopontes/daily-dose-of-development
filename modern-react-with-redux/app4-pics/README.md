@@ -21,7 +21,7 @@
 
 ## Event Flow
 1. User types in input
-2. Callback gets invoked
+2. onChange event happens and callback gets invoked
 3. We call setState with the new value
 4. Component rerenders
 5. Input is told what its value is (coming from state)
@@ -32,7 +32,7 @@
 ## Ways to Solve Context Issues
 - Binding the context to function on the constructor:
   - Code: this.functionName = this.functionName.bind(this)
-- Transforming our function into a arrow function
+- RECOMMENDED: Transforming our function into a arrow function
   - From: onElementEvent(event) {  }
   - To: onElementEvent = (event) => {  }
 - Arrow function invoking function:
