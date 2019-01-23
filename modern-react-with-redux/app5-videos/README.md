@@ -8,3 +8,7 @@ YouTube like app, where we search the public API, get video results, and play th
 
 ## Semantic UI
 - Form Basics: div.ui.container > div.ui.segment > div.ui.form > div.field > label + input
+
+## YouTube API
+- React App imports Axios
+- Axios makes a request to the YouTube API using our generated key
