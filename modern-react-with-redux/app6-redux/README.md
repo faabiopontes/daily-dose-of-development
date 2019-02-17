@@ -19,11 +19,11 @@ On this app we are looking at how Redux works and developing and app to consolid
 - Not explicitly designed to work with React!
 
 ## Redux Cycle
-1. Action Creator
-2. Action
-3. dispatch
-4. Reducers
-5. State
+1. Action Creator (Person dropping of the form)
+2. Action (Form)
+3. dispatch (Form Receiver)
+4. Reducers (Departments)
+5. State (Compiled department data)
 
 ## Insurance Company Analogy
 We gonna go through a story to helps us understand the Redux workflow better
