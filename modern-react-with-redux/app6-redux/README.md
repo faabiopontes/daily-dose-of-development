@@ -26,17 +26,25 @@ On this app we are looking at how Redux works and developing and app to consolid
 5. State
 
 ## Insurance Company Analogy
-
 We gonna go through a story to helps us understand the Redux workflow better
 
 ### Insurance Terms
-- policy: Customer holds a 'policy', if bad stuff happens to them then we pay them
-- claim: Customer had something bad happen to them, we need to pay them
+   - policy: Customer holds a 'policy', if bad stuff happens to them then we pay them
+   - claim: Customer had something bad happen to them, we need to pay them
 
 ### Insurance Co Departments
-- Claims History: Stores a list of all claims ever made
-- Policies: Stores a list of who has a policy with our insurance company
-- Accounting: Stores a big bag of cash, we pay people from this
+  - Claims History: Stores a list of all claims ever made
+  - Policies: Stores a list of who has a policy with our insurance company
+  - Accounting: Stores a big bag of cash, we pay people from this
+
+### Form Content
+  - Type: Action que Form intends to execute
+  - Payload: With data related to the intent of the Form
+
+### Types of Forms
+  - CREATE POLICY
+  - CREATE CLAIM
+  - DELETE POLICY
 
 ### Story
 - Customer fills a Form and hands to the Form Receiver at Insurance Co
@@ -46,3 +54,7 @@ We gonna go through a story to helps us understand the Redux workflow better
 - The Policies Department the start to send it's policies to a Central Repository of Data
 - The Central Repository of Data then sends the form to the Policies Department when it receives a new Form
 - The Policies Department then sends the updated policies back again to the Central Repository of Data
+- Every different type of Form has a different information in it's payload
+- Every Department does a different thing with each Type of Form
+- Every Department receives data from the Central Repository of Data
+- The department might then change this data and return it to the Central Repository of Data
