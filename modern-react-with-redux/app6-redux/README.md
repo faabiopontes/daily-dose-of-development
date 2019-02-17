@@ -41,3 +41,8 @@ We gonna go through a story to helps us understand the Redux workflow better
 ### Story
 - Customer fills a Form and hands to the Form Receiver at Insurance Co
 - Form Receiver prints copies of the form and handles to all three different departments of the company
+- Management team knocks at the Policies Department to ask who has a policy right now
+- Over time management gets frustated to have to know on the Policies Department to know who has a policy
+- The Policies Department the start to send it's policies to a Central Repository of Data
+- The Central Repository of Data then sends the form to the Policies Department when it receives a new Form
+- The Policies Department then sends the updated policies back again to the Central Repository of Data
