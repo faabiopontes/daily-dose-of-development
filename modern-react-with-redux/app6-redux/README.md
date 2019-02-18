@@ -58,3 +58,6 @@ We gonna go through a story to helps us understand the Redux workflow better
 - Every Department does a different thing with each Type of Form
 - Every Department receives data from the Central Repository of Data
 - The department might then change this data and return it to the Central Repository of Data
+
+# Reducers
+- Following the Functional Programming paradigm, a Reducer must return a brand new object, instead of modifying the received one at the first parameter
