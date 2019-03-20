@@ -12,9 +12,9 @@ const claimsHistory = (oldListOfClaims = [], action) => {
 
 const accounting = (bagOfMoney = 100, action) => {
   if (action.type === "CREATE_CLAIM") {
-    return bagOfMoney - action.payload.amountOfMoneyToCollect;
+    return bagOfMoney - action.payload.amount;
   } else if (action.type === "CREATE_POLICY") {
-    return bagOfMoney - action.payload.amountOfMoneyToCollect;
+    return bagOfMoney + action.payload.amount;
   }
 
   return bagOfMoney;
@@ -29,3 +29,5 @@ const policies = (listOfPolicies = [], action) => {
 
   return listOfPolicies;
 };
+
+export default { claimsHistory, accounting, policies };
