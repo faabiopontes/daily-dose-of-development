@@ -17,13 +17,32 @@ On this app we are looking at how Redux works and developing and app to consolid
 - Makes creating complex applications easier
 - Not required to create a React app!
 - Not explicitly designed to work with React!
+- Since Redux has a lot of specific rules for changing the store, the complexity of using Redux with an app doesn't grow as extensively as the app grow
 
-## Redux Cycle
+## What is the Redux State (Store)?
+- Global object with data related to different reducers
+- The store is splitted in different reducers so the code becomes more organized and cohesive
+- The only way of changing it is through and action getting send through the dispatch and reaching the corresponding reducer, that receives the actual state of the application and returns a new one after applying the received action and its data
+- We cannot directly modify the state
+
+## Redux Cycle (Insurance Company)
+To change state of our app, we call an:
 1. Action Creator (Person dropping of the form)
+
+That produces an:
 2. Action (Form)
+
+That gets fed to:
 3. dispatch (Form Receiver)
+
+That forwards the action to:
 4. Reducers (Departments)
+
+That creates a new:
 5. State (Compiled department data)
+
+## Reducers
+- Following the Functional Programming paradigm, a Reducer must return a brand new object, instead of modifying the received one at the first parameter
 
 ## Insurance Company Analogy
 We gonna go through a story to helps us understand the Redux workflow better
@@ -58,6 +77,3 @@ We gonna go through a story to helps us understand the Redux workflow better
 - Every Department does a different thing with each Type of Form
 - Every Department receives data from the Central Repository of Data
 - The department might then change this data and return it to the Central Repository of Data
-
-# Reducers
-- Following the Functional Programming paradigm, a Reducer must return a brand new object, instead of modifying the received one at the first parameter
