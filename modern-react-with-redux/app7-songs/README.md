@@ -10,3 +10,10 @@ This Songs app is intended to merge our knowledges about React and Redux into a 
 - The Connect ask the Provider to tell it about changes
 - The Provider then sends the info when it changes
 - The Connect then binds the necessary info from the store into our component
+
+## Redux Project Structure
+- src/
+  - actions/: Files related to action creators
+  - components/: Files related to our components
+  - reducers/: Files related to reducers
+  - index.js: Sets up both React and Redux sides of the app
