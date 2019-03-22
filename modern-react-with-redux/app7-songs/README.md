@@ -4,3 +4,9 @@ This Songs app is intended to merge our knowledges about React and Redux into a 
 
 ## Reminders
 - To change the Redux Store the first step is the call to the Action Creator
+
+## Redux
+- To bind Redux correctly into our components we need to create two components, Provider and Connect
+- The Connect ask the Provider to tell it about changes
+- The Provider then sends the info when it changes
+- The Connect then binds the necessary info from the store into our component
