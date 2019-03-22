@@ -6,6 +6,8 @@ This Songs app is intended to merge our knowledges about React and Redux into a 
 - To change the Redux Store the first step is the call to the Action Creator
 - If our export is named we need the curly braces, otherwise we don't
 - After we bind the Redux state with mapStateToProps it will be available as a property (this.props) of the component
+- The action can be called outside of our this.props.action() but it will be treated as a regular JS function that returns a object
+- Redux is Not Magic
 
 ## Redux
 - To bind Redux correctly into our components we need to create two components, Provider and Connect
