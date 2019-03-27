@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "DEBUG=app node app.js",
-    "start-windows": "set DEBUG=app & node app.js"
+    "start-windows": "set DEBUG=app & node app.js",
+    "lint": "eslint app.js"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,8 @@
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3"
   }
 }
