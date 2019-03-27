@@ -7,6 +7,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/${relativeFile}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch Rocket ES6",
       "program": "${workspaceFolder}/rocket-es6/dist/index.js"
     }
