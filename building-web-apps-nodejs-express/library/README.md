@@ -10,3 +10,9 @@ Learning Node.js and Express while developing a Library app
   - Bootstrap
   - jQuery
 
+## Section 4
+- NPM start
+- ESLint
+- ES6 and beyond
+- Nodemon
+- Environmental variables
