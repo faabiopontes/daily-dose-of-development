@@ -22,9 +22,13 @@ app.use(
   express.static(path.join(__dirname, '/node_modules/jquery/dist')),
 );
 
+app.set('views', './src/views');
+app.set('view engine', 'pug');
+
 app.get('/', (req, res) => {
   // res.send('Hello from my library app');
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  // res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.render('index');
 });
 
 app.listen(port, () => {
