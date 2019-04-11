@@ -32,3 +32,8 @@ Learning Node.js and Express while developing a Library app
 - Using Pug
 - Using EJS
 - Our First Real Page
+
+### Pug
+  - Simplifies our HTML by removing closing tags and using indentation of code
+  - Can receive a object of properties from the render()
+  - We can loop over a list on a pug file
