@@ -32,7 +32,19 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
   // res.send('Hello from my library app');
   // res.sendFile(path.join(__dirname, 'views', 'index.html'));
-  res.render('index', { title: 'MyLibrary', list: ['a', 'b'] });
+  res.render('index', {
+    title: 'MyLibrary',
+    nav: [
+      {
+        link: '/books',
+        title: 'Books',
+      },
+      {
+        link: '/authors',
+        title: 'Authors',
+      },
+    ],
+  });
 });
 
 app.listen(port, () => {
