@@ -23,7 +23,7 @@ app.use(
 );
 
 app.set('views', './src/views');
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   // res.send('Hello from my library app');
