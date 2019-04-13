@@ -50,3 +50,7 @@ Learning Node.js and Express while developing a Library app
 - Mongo Command Line
 - Inserting Data
 - Find and Find One
+
+### SQL Server on Azure
+- We created our pslibrary database at Azure
+- We should disable it after the course so we don't get charged a lot
