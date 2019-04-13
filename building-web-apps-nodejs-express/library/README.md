@@ -43,3 +43,10 @@ Learning Node.js and Express while developing a Library app
 - Separating Files (our routes from books are in a different file now)
 - Parameter Variables (a different route id for every book)
 - Router Fuctions (Higher-order functions)
+
+## Section 7 - Databases
+- Getting Data from SQL Server
+- Using MongoDB
+- Mongo Command Line
+- Inserting Data
+- Find and Find One
