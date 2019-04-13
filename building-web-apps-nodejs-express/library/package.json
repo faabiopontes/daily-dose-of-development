@@ -19,6 +19,7 @@
     "express": "^4.16.4",
     "jquery": "^3.3.1",
     "morgan": "^1.9.1",
+    "mssql": "^5.0.5",
     "nodemon": "^1.18.10",
     "pug": "^2.0.3"
   },
@@ -34,7 +35,7 @@
       "node_modules/**/node_modules"
     ],
     "env": {
-      "DEBUG": "app",
+      "DEBUG": "app:*",
       "NODE_ENV": "development",
       "PORT": 3000
     }
