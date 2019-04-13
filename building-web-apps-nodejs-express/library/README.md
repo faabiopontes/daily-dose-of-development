@@ -37,3 +37,9 @@ Learning Node.js and Express while developing a Library app
   - Simplifies our HTML by removing closing tags and using indentation of code
   - Can receive a object of properties from the render()
   - We can loop over a list on a pug file
+
+## Section 6 - Routing
+- Build Routes for Our Application (our app now has routes for a list of and each book)
+- Separating Files (our routes from books are in a different file now)
+- Parameter Variables (a different route id for every book)
+- Router Fuctions (Higher-order functions)
