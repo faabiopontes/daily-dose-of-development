@@ -56,15 +56,14 @@ function router(nav) {
     },
   ];
 
-  bookRouter.route('/').get((req, res) => {
+  bookRouter.route('/').get(async (req, res) => {
     const request = new mssql.Request();
-    request.query('select * from books').then((result) => {
-      debug(result);
-      res.render('bookListView', {
-        title: 'MyLibrary',
-        books: result.recordset,
-        nav,
-      });
+    const result = await request.query('select * from books');
+    debug(result);
+    res.render('bookListView', {
+      title: 'MyLibrary',
+      books: result.recordset,
+      nav,
     });
   });
   bookRouter.route('/:id').get((req, res) => {
