@@ -35,7 +35,7 @@
       "node_modules/**/node_modules"
     ],
     "env": {
-      "DEBUG": "app:*",
+      "DEBUG": "app, app:*",
       "NODE_ENV": "development",
       "PORT": 3000
     }

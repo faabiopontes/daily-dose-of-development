@@ -16,17 +16,22 @@ function router(nav) {
       nav,
     });
   });
-  bookRouter.route('/:id').get(async (req, res) => {
-    const { id } = req.params;
-    const { recordset } = await request
-      .input('id', sql.Int, id)
-      .query('select * from books where id = @id');
-
-    res.render('bookView', {
-      nav,
-      book: recordset[0],
+  bookRouter
+    .route('/:id')
+    .all(async (req, res, next) => {
+      const { id } = req.params;
+      const { recordset } = await request
+        .input('id', sql.Int, id)
+        .query('select * from books where id = @id');
+      [req.book] = recordset;
+      next();
+    })
+    .get((req, res) => {
+      res.render('bookView', {
+        nav,
+        book: req.book,
+      });
     });
-  });
   return bookRouter;
 }
 
