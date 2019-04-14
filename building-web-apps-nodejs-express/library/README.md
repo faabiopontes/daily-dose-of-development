@@ -27,24 +27,26 @@ Learning Node.js and Express while developing a Library app
 
 ## Section 5 - Templating
 
-- Building a Web Application
 - Templating Engines
 - Using Pug
 - Using EJS
 - Our First Real Page
 
 ### Pug
-  - Simplifies our HTML by removing closing tags and using indentation of code
-  - Can receive a object of properties from the render()
-  - We can loop over a list on a pug file
+
+- Simplifies our HTML by removing closing tags and using indentation of code
+- Can receive a object of properties from the render()
+- We can loop over a list on a pug file
 
 ## Section 6 - Routing
+
 - Build Routes for Our Application (our app now has routes for a list of and each book)
 - Separating Files (our routes from books are in a different file now)
 - Parameter Variables (a different route id for every book)
 - Router Fuctions (Higher-order functions)
 
 ## Section 7 - Databases
+
 - Getting Data from SQL Server (Setting up our DB on Azure)
 - Using MongoDB (installed local and using basic functions and queries)
 - Mongo Command Line (how to access our MongoDB from CLI)
@@ -52,17 +54,28 @@ Learning Node.js and Express while developing a Library app
 - Find and Find One (basic queries with ObjectID for showing a single book)
 
 ### SQL Server on Azure
+
 - We created our pslibrary database at Azure
 - We should disable it after the course so we don't get charged a lot
 
 ### Node Require Caching
+
 - When we require('mssql') over different files, Node uses the same instance, that's why we don't need to instantiate with the config in the bookRoutes file
 
 ### MongoDB
+
 - Installed MongoDB Community package for Ubuntu 18.04
 - Using npm mongodb to use it in our project
 
 #### MongoDB Basic CLI
+
 - shows dbs
 - use libraryApp
 - db.books.find() (we can type only "db.books." then press TAB to see all the functions available
+
+## Section 8 - Authentication
+
+- Create Users
+- Authentication
+- Authorization
+- Passport
