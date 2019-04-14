@@ -57,3 +57,6 @@ Learning Node.js and Express while developing a Library app
 
 ### Node Require Caching
 - When we require('mssql') over different files, Node uses the same instance, that's why we don't need to instantiate with the config in the bookRoutes file
+
+### MongoDB Local
+- Installed MongoDB Community package for Ubuntu 18.04
