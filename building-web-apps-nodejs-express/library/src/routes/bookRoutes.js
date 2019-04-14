@@ -1,5 +1,5 @@
 const express = require('express');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectID } = require('mongodb');
 
 const bookRouter = express.Router();
 
@@ -49,7 +49,24 @@ function router(nav) {
       //   .query('select * from books where id = @id');
       // [req.book] = recordset;
 
-      next();
+      // MongoDB way
+      const url = 'mongodb://localhost:27017';
+      const dbName = 'libraryApp';
+      let client;
+      try {
+        client = await MongoClient.connect(url, { useNewUrlParser: true });
+        debug('Connected correctly to server');
+
+        const db = client.db(dbName);
+        const col = await db.collection('books');
+        const book = await col.findOne({ _id: ObjectID(id) });
+
+        debug(book);
+        req.book = book;
+        next();
+      } catch (err) {
+        debug('Error connecting to the server', err);
+      }
     })
     .get((req, res) => {
       res.render('bookView', {
