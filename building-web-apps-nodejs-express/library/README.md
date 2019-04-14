@@ -60,3 +60,4 @@ Learning Node.js and Express while developing a Library app
 
 ### MongoDB Local
 - Installed MongoDB Community package for Ubuntu 18.04
+- Using npm mongodb to use it in our project
