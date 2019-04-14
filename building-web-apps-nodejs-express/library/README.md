@@ -45,11 +45,11 @@ Learning Node.js and Express while developing a Library app
 - Router Fuctions (Higher-order functions)
 
 ## Section 7 - Databases
-- Getting Data from SQL Server
-- Using MongoDB
-- Mongo Command Line
-- Inserting Data
-- Find and Find One
+- Getting Data from SQL Server (Setting up our DB on Azure)
+- Using MongoDB (installed local and using basic functions and queries)
+- Mongo Command Line (how to access our MongoDB from CLI)
+- Inserting Data (using a admin route with the insertMany function to insert our books.json into MongoDB)
+- Find and Find One (basic queries with ObjectID for showing a single book)
 
 ### SQL Server on Azure
 - We created our pslibrary database at Azure
