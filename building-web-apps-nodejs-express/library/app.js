@@ -3,12 +3,12 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
-const mssql = require('mssql');
+const sql = require('mssql');
 
 const config = {
   user: 'pslibrary',
   password: 'pl4nq12PC!@#',
-  server: 'fsplibrary.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
+  server: 'fsplibrary.database.windows.net',
   database: 'PSLibrary',
 
   options: {
@@ -19,7 +19,7 @@ const config = {
 const app = express();
 const port = process.env.PORT;
 
-mssql.connect(config).catch(err => debug(err));
+sql.connect(config).catch(err => debug(err));
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
 app.use(

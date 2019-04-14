@@ -54,3 +54,6 @@ Learning Node.js and Express while developing a Library app
 ### SQL Server on Azure
 - We created our pslibrary database at Azure
 - We should disable it after the course so we don't get charged a lot
+
+### Node Require Caching
+- When we require('mssql') over different files, Node uses the same instance, that's why we don't need to instantiate with the config in the bookRoutes file
