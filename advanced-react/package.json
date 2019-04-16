@@ -1,0 +1,35 @@
+{
+  "name": "advanced-react",
+  "version": "1.0.0",
+  "main": "lib/server.js",
+  "author": "Fabio Pontes",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
+    "dev-windows": "nodemon --exec babel-node lib/server.js"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pm2": "^3.5.0"
+  }
+}
