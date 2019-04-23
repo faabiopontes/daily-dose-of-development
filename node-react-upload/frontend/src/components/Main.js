@@ -5,19 +5,20 @@ class Main extends React.Component {
     imageURL: '',
   };
 
-  handleUploadImage(ev) {
+  handleUploadImage = async ev => {
     ev.preventDefault();
 
     const data = new FormData();
     data.append('file', this.uploadInput.files[0]);
-    data.append('filename', this.filename.value);
+    data.append('filename', this.fileName.value);
 
-    fetch('http://localhost:8000/upload', {}).then(response => {
-      response.json().then(body => {
-        this.setState({ imageURL: `http://localhost:8000/${body.file}` });
-      });
+    const response = await fetch('http://localhost:8000/upload', {
+      method: 'POST',
+      body: data,
     });
-  }
+    const body = await response.json();
+    this.setState({ imageURL: `http://localhost:8000/${body.file}` });
+  };
 
   render() {
     return (
@@ -28,6 +29,15 @@ class Main extends React.Component {
               this.uploadInput = ref;
             }}
             type='file'
+          />
+        </div>
+        <div>
+          <input
+            ref={ref => {
+              this.fileName = ref;
+            }}
+            type='text'
+            placeholder='Enter the desired name of file'
           />
         </div>
         <br />
