@@ -12,7 +12,7 @@ class Main extends React.Component {
     data.append('file', this.uploadInput.files[0]);
     data.append('filename', this.filename.value);
 
-    fetch('http://localhost:3000/upload', {}).then(response => {
+    fetch('http://localhost:8000/upload', {}).then(response => {
       response.json().then(body => {
         this.setState({ imageURL: `http://localhost:8000/${body.file}` });
       });
