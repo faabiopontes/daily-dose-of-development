@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route that will make any route map to our method
+Route::get('/{any}', 'SpaController@index')->where('any', '.*');
