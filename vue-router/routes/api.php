@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Vue SPA applications are stateless
+// The API routes don't use session state
+// Meaning our application is truly stateless
+Route::get('/users', function () {
+    // Our factory creates Eloquent models
+    // The make() method returns a collection
+    return factory('App\User', 10)->make();
+});
