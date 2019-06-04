@@ -21,6 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // The API routes don't use session state
 // Meaning our application is truly stateless
 Route::get('/users', function () {
+    if (rand(1, 10) < 3) {
+        abort(500, 'We could not retrieve the users');
+    }
     // Our factory creates Eloquent models
     // The make() method returns a collection
     return factory('App\User', 10)->make();
