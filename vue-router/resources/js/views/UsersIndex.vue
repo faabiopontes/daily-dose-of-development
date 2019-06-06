@@ -3,13 +3,11 @@
     <div class="loading" v-if="loading">Loading...</div>
 
     <div v-if="error" class="error">
-        <p>{{ error }}</p>
+      <p>{{ error }}</p>
 
-        <p>
-            <button @click.prevent="fetchData">
-                Try Again
-            </button>
-        </p>
+      <p>
+        <button @click.prevent="fetchData">Try Again</button>
+      </p>
     </div>
 
     <ul v-if="users">
@@ -26,6 +24,16 @@
 </template>
 <script>
 import axios from "axios";
+const getUsers = async (page, callback) => {
+  const params = { page };
+
+  try {
+    const response = await axios.get("/api/users", { params });
+    callback(null, response.data);
+  } catch (error) {
+    callback(error, error.response.data);
+  }
+};
 export default {
   data() {
     return {
@@ -33,6 +41,17 @@ export default {
       users: null,
       error: null
     };
+  },
+  beforeRouteEnter(to, from, next) {
+    const params = {
+      page: to.query.page
+    };
+
+    getUsers(to.query.page, (err, data) => {
+      next(vm => {
+        // vm.setData(err, data);
+      });
+    });
   },
   created() {
     this.fetchData();
@@ -49,7 +68,6 @@ export default {
       } finally {
         this.loading = false;
       }
-
     }
   }
 };
