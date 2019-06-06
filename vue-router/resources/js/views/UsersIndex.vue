@@ -43,7 +43,7 @@ export default {
       this.loading = true;
       try {
         let response = await axios.get("/api/users");
-        this.users = response.data;
+        this.users = response.data.data;
       } catch (error) {
         this.error = error.response.data.message || error.message;
       } finally {
