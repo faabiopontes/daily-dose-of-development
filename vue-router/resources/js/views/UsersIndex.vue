@@ -48,15 +48,29 @@ export default {
     };
 
     getUsers(to.query.page, (err, data) => {
-      next(vm => {
-        // vm.setData(err, data);
-      });
+      next(vm => vm.setData(err, data));
     });
   },
   created() {
     this.fetchData();
   },
+  beforeRouteUpdate(to, from, next) {
+    this.users = this.links = this.meta = null;
+    getUsers(to.query.page, (err, data) => {
+      this.setData(err, data);
+      next();
+    });
+  },
   methods: {
+    setData(err, { data: users, links, meta }) {
+      if (err) {
+        this.error = err.toString();
+      } else {
+        this.users = users;
+        this.links = links;
+        this.meta = meta;
+      }
+    },
     async fetchData() {
       this.error = this.users = null;
       this.loading = true;
