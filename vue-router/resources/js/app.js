@@ -10,6 +10,7 @@ import App from './views/App';
 import Hello from './views/Hello';
 import Home from './views/Home';
 import UsersIndex from './views/UsersIndex';
+import UsersEdit from './views/UsersEdit';
 
 // New VueRouter instance receiving configuration object
 const router = new VueRouter({
@@ -32,7 +33,12 @@ const router = new VueRouter({
             path: '/users',
             name: 'users.index',
             component: UsersIndex,
-        }
+        },
+        {
+            path: '/users/:id/edit',
+            name: 'users.edit',
+            component: UsersEdit,
+        },
     ],
 });
 

@@ -37,7 +37,6 @@ const getUsers = async (page, callback) => {
     const response = await axios.get("/api/users", { params });
     callback(null, response.data);
   } catch (error) {
-    debugger;
     callback(error, error.response.data);
   }
 };
@@ -112,7 +111,6 @@ export default {
       });
     },
     refreshPage() {
-      debugger;
       this.$router.push({
         query: {
           page: this.meta.current_page
@@ -120,7 +118,6 @@ export default {
       });
     },
     setData(err, { data: users, links, meta }) {
-      debugger;
       if (err) {
         this.error = err.toString();
       } else {
