@@ -1,6 +1,6 @@
 <template>
   <div class="users">
-    <div class="loading" v-if="loading">Loading...</div>
+    <div v-if="loading" class="loading">Loading...</div>
 
     <p>
       <button @click.prevent="refreshPage">Try Again</button>
@@ -11,7 +11,7 @@
     </div>
 
     <ul v-if="users">
-      <li v-bind:key="id" v-for="{ id, name, email } in users">
+      <li v-for="{ id, name, email } in users" :key="id">
         <strong>Id:</strong>
         {{ id }},
         <strong>Name:</strong>
@@ -22,9 +22,9 @@
     </ul>
 
     <div class="pagination">
-      <button :disabled="! prevPage" @click.prevent="goToPrev">Previous</button>
+      <button :disabled="!prevPage" @click.prevent="goToPrev">Previous</button>
       {{ paginationCount }}
-      <button :disabled="! nextPage" @click.prevent="goToNext">Next</button>
+      <button :disabled="!nextPage" @click.prevent="goToNext">Next</button>
     </div>
   </div>
 </template>
