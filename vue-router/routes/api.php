@@ -24,6 +24,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->group(function () {
     Route::get('/users', 'UsersController@index');
     Route::get('/users/{user}', 'UsersController@show');
+    Route::get('/tasks/{task}', 'TasksController@show');
 
     // Vue SPA applications are stateless
     // The API routes don't use session state
