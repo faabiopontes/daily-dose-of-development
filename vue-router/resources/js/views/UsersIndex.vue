@@ -17,7 +17,10 @@
         <strong>Name:</strong>
         {{ name }},
         <strong>Email:</strong>
-        {{ email }}
+        {{ email }} |
+        <router-link :to="{ name: 'users.edit', params: { id } }">
+          Edit
+        </router-link>
       </li>
     </ul>
 
