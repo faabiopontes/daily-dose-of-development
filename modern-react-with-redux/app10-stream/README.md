@@ -10,6 +10,20 @@
 - RTMP Server: Connects to the Web Server that knows which streams are currently broadcasting
 - Web Server: Sends stream to Viewer's Browser
 
+## App Challenges
+
+- Need to be able to navigate around to separate pages in our app
+- Need to allow a user to login/logout
+- Need to handle forms in Redux
+- Need to master CRUD operations in React/Redux
+- Errors will likely occur! Need good error handling
+
+### What the CRUD?
+- Create
+- Read
+- Update
+- Destroy
+
 ## Authentication
 
 - User is **not** logged in:
