@@ -24,6 +24,12 @@
 - Update
 - Destroy
 
+### React Family
+- react-router: Core navigation lib - we don't install this manually
+- react-router-dom: Navigation for dom-based apps (we want this!)
+- react-router-native: Navigation for React Native apps
+- react-router-redux: Bindings between Redux and React Router (not necessary)
+
 ## Authentication
 
 - User is **not** logged in:
