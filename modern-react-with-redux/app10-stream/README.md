@@ -30,6 +30,11 @@
 - react-router-native: Navigation for React Native apps
 - react-router-redux: Bindings between Redux and React Router (not necessary)
 
+### What the RR (React Router)?
+- history object: Keeps track of the address bar in your browser
+- BrowserRouter: Listens to 'history' for changes to the URL
+- Route: Makes their component visible only when the 'path' matches the current URL
+
 ## Authentication
 
 - User is **not** logged in:
