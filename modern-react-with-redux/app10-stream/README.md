@@ -32,7 +32,7 @@
 - `react-router-native`: Navigation for React Native apps
 - `react-router-redux`: Bindings between Redux and React Router (not necessary)
 
-### What the RR (React Router)?
+## React Router
 
 - `history` object: Keeps track of the address bar in your browser
 - BrowserRouter: Listens to `history` object for changes to the URL
@@ -63,6 +63,37 @@
 4. `history` object sees updated URL, takes URL and sends it to `BrowserRouter`
 5. `BrowserRouter` communicates the URL to `Route` components
 6. `Route` components rerender to show new set of components
+
+### Different Types of Navigations
+
+- It's all about deployment
+- `BrowserRouter`
+  - Uses everything after the domain or port as the `path`
+  - Most complicated to
+  - Example: localhost:3000**/pagetwo**
+- `HashRouter`:
+  - Uses everything after a **#** as the `path`
+  - Example: localhost:30000**/#/pagetwo**
+- `MemoryRouter`
+  - Doesn't use the URL to track navigation.
+  - Example: localhost:3000**/**
+
+### Traditional Server Navigation
+
+- Routes or files that exist are returned, and then 404 when doesn't exist
+
+1. Do I, the Backend, have a router for `/pagetwo`?
+2. Yes, I am supposed to generate some HTML and send it back
+3. Respond with HTML document from backend
+
+### Create-React-App Dev Server Navigation
+
+- If everything fails it defaults to index.html file instead
+
+1. Do I have anything special for `/pagetwo`?
+2. Check dev resources (CSS, JS)
+3. Check public dir (Images, Fonts, SVGs, ICOs, JSON)
+4. Nope, ok, guess I'll serve up the `index.html` file
 
 ## Authentication
 
