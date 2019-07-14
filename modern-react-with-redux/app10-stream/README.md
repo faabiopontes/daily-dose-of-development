@@ -42,6 +42,15 @@
   - When we don't use the `exact` attribute it's like we ran `extractedPath.contains(path)`
 - When we add attributes without value, like `<Route exact />`, it's the same as `<Route exact={true} />`
 
+### Bad Navigation
+- Using archors tags to change the page is **bad** because it makes our app restart completely
+- When you add an `<a/>` tag to your application with `href='/pagetwo'`and click it
+- The browser makes a request to the server
+- Server responds with `index.html` file
+- **Browser receives `index.html` file, dumps old HTML file it was showing (including all of your React/Redux state data!)**
+- `index.html` file lists our JS files in script tags - browser downloads and executes these scripts
+- Our app starts up (or kind of restarts if think about the whole process)
+
 ## Authentication
 
 - User is **not** logged in:
