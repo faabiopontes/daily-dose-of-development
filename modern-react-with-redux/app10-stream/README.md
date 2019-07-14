@@ -20,36 +20,49 @@
 
 ### What the CRUD?
 
-- Create
-- Read
-- Update
-- Destroy
+- **C**reate
+- **R**ead
+- **U**pdate
+- **D**estroy
 
 ### React Family
 
-- react-router: Core navigation lib - we don't install this manually
-- react-router-dom: Navigation for dom-based apps (we want this!)
-- react-router-native: Navigation for React Native apps
-- react-router-redux: Bindings between Redux and React Router (not necessary)
+- `react-router`: Core navigation lib - we don't install this manually
+- `react-router-dom`: Navigation for dom-based apps (we want this!)
+- `react-router-native`: Navigation for React Native apps
+- `react-router-redux`: Bindings between Redux and React Router (not necessary)
 
 ### What the RR (React Router)?
 
-- history object: Keeps track of the address bar in your browser
-- BrowserRouter: Listens to 'history' for changes to the URL
+- `history` object: Keeps track of the address bar in your browser
+- BrowserRouter: Listens to `history` object for changes to the URL
 - Route
   - Makes the component visible only when the 'path' matches the current URL
-  - Considering above statement, multiple "Route components" can be rendered on the same path
+  - Considering above statement, multiple `Route` components can be rendered on the same path
   - When we don't use the `exact` attribute it's like we ran `extractedPath.contains(path)`
 - When we add attributes without value, like `<Route exact />`, it's the same as `<Route exact={true} />`
 
 ### Bad Navigation
+
 - Using archors tags to change the page is **bad** because it makes our app restart completely
-- When you add an `<a/>` tag to your application with `href='/pagetwo'`and click it
-- The browser makes a request to the server
-- Server responds with `index.html` file
-- **Browser receives `index.html` file, dumps old HTML file it was showing (including all of your React/Redux state data!)**
-- `index.html` file lists our JS files in script tags - browser downloads and executes these scripts
-- Our app starts up (or kind of restarts if think about the whole process)
+
+1. When you add an `<a/>` tag to your application with `href='/pagetwo'`and click it
+2. The browser makes a request to the server
+3. Server responds with `index.html` file
+4. **Browser receives `index.html` file, dumps old HTML file it was showing (including all of your React/Redux state data!)**
+5. `index.html` file lists our JS files in script tags - browser downloads and executes these scripts
+6. Our app starts up (or kind of restarts if think about the whole process)
+
+### Good Navigation
+
+- User wants to navigate to another page in our app
+
+1. Users clicks a `Link` tag
+2. `React Router` prevents the browser from navigating to the new page and fetching new `index.html` file!
+3. URL still changes
+4. `history` object sees updated URL, takes URL and sends it to `BrowserRouter`
+5. `BrowserRouter` communicates the URL to `Route` components
+6. `Route` components rerender to show new set of components
 
 ## Authentication
 
