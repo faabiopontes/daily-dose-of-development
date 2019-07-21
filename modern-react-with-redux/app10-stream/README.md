@@ -144,3 +144,10 @@
 6. Popup window closes
 7. Google's JS lib invokes a callback in our React/Redux app
 8. Callback provided with **authorization token** and profile info for user
+
+#### Steps for Settings Up OAuth
+1. Create a new project at https://console.developers.google.com
+2. Set up and OAuth confirmation screen
+3. Generate an OAuth Client ID
+4. Install Google's API library, initialize it with the OAuth Client ID
+5. Make sure the lib gets called any time the user clicks on the **Login with Google** button
