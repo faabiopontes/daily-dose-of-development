@@ -104,3 +104,20 @@
   - User can create a new stream/channel
   - User can **edit** a stream/channel they have created
   - User can **delete** a stream/channel they have created
+
+### Email/Password Authentication
+
+- We store a record in a database with the user's email and password
+- When the user tries to login, we compare email/password with whats stored in DB
+- A user is **logged in** when the yenter the correct email/password
+
+### OAuth Authentication
+
+- User authenticates with outisde service provider (Google, Linkedin, Facebook)
+- User authorizes our app to access their information
+- Outside provider tells us about the user
+- We are trusting the outside provider to correctly handle identification of a user
+- OAuth can be used for:
+
+1. User identification in our app
+2. Our app making actions on behalf of user
