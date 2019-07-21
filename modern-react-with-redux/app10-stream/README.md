@@ -121,3 +121,26 @@
 
 1. User identification in our app
 2. Our app making actions on behalf of user
+
+#### OAuth for Servers
+
+- Results in a **token** that a server can use to make requests on behalf of the user
+- Usually used when we have an app that needs to access user data **when they are not logged in**
+- Difficult to setup because we need to store a lot of info about the user
+
+#### OAuth for JS Browser Apps
+
+- Results in a **token** that a browser can use to make requests on behalf of the user
+- Usually used when we have an app that needs to access user data **while they are logged in**
+- Very easy to set up thanks to Google's JS lib to automate flow
+
+#### OAuth Browser Flow
+
+1. User clicks **Login with Google** button
+2. We use Google's JS lib to initiate OAuth process
+3. Google's JS lib makes lib makes auth request to Google
+4. Google display confirmation screen to user in popup window
+5. User accepts
+6. Popup window closes
+7. Google's JS lib invokes a callback in our React/Redux app
+8. Callback provided with **authorization token** and profile info for user
