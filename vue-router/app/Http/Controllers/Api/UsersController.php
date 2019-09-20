@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\User;
+use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
@@ -22,11 +22,12 @@ class UsersController extends Controller
     public function update(User $user, Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
+            'name'  => 'required',
             'email' => 'required|email',
         ]);
 
         $user->update($data);
+
         return new UserResource($user);
     }
 }
