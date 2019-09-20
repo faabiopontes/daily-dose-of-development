@@ -1,4 +1,5 @@
 node_modules
+# GitHub
 public/hot
 public/storage
 public/css
@@ -17,3 +18,6 @@ yarn-error.log
 .fsp*
 .vscode/temp.sql
 .vscode/last.sql
+# GitLab
+dist
+fsp

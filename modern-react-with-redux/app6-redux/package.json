@@ -1,0 +1,24 @@
+{
+  "name": "app6-redux",
+  "version": "1.0.0",
+  "description": "On this app we are looking at how Redux works and developing and app to consolidate our learnings about it",
+  "main": "actions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel-node app.js",
+    "babel-debug": "nodemon --exec babel-node app.js --inspect"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.10"
+  }
+}
