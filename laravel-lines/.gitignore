@@ -1,0 +1,23 @@
+node_modules
+# GitHub
+public/hot
+public/storage
+public/css
+public/js
+public/plugins
+storage/*.key
+vendor
+.idea
+.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
+.fsp
+.fsp*
+.vscode/temp.sql
+.vscode/last.sql
+# GitLab
+dist
+fsp
