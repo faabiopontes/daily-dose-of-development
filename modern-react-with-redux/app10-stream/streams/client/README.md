@@ -10,12 +10,19 @@
 
 ... that are changed by
 
-#### Action Creators
+#### Reducers
+
+- SIGN_IN
+- SIGN_OUT
+
+... that are called by
+
+#### Actions
 
 - signIn()
 - signOut()
 
-... that are called by **onAuthChange** at
+... that are called as connected props on **onAuthChange** at
 
 #### GoogleAuth Component
 
