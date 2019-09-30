@@ -1,12 +1,9 @@
 const express = require('express');
 
+const routes = require('./routes');
+
 const app = express();
 
-app.get('/', (req, res) => {
-  let name = req.query.name;
-  name = name ? name : 'World';
-
-  return res.json({ message: `Hello ${name}` });
-});
-
+app.use(express.json());
+app.use(routes);
 app.listen(3333);
