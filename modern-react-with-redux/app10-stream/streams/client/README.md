@@ -31,3 +31,7 @@
 - onAuthChange(): Receives change from GAPI Auth2...
 
 ... and communicates with **Redux Store** to get updated Auth State
+
+## Redux Dev Tools
+- We can use debug sessions to kind of save how the store was at some point using the GET parameter `debug_session=**<string of the session>**`
+- Example: `http://localhost:3000/?debug_session=fsp`
