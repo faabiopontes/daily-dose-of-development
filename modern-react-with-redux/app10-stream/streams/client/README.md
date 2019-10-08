@@ -35,3 +35,6 @@
 ## Redux Dev Tools
 - We can use debug sessions to kind of save how the store was at some point using the GET parameter `debug_session=**<string of the session>**`
 - Example: `http://localhost:3000/?debug_session=fsp`
+
+## Redux Forms
+- This package has great documentation with lots of use case scenarios like the [Wizard Form](https://redux-form.com/8.2.2/examples/wizard/)
