@@ -38,3 +38,10 @@
 
 ## Redux Forms
 - This package has great documentation with lots of use case scenarios like the [Wizard Form](https://redux-form.com/8.2.2/examples/wizard/)
+
+### Validation Flow
+1. Form is initially rendered OR user interacts with it
+2. Validate function gets called with all values from the form
+3. Did the user enter valid inputs?
+  - Yes: Return an empty object (Returning an empty object makes redux form think our form is valid)
+  - No: Return an object. For each invalid field, put a key-value pair on the object with the NAME of the field and the error message
