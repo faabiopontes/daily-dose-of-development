@@ -151,3 +151,12 @@
 3. Generate an OAuth Client ID
 4. Install Google's API library, initialize it with the OAuth Client ID
 5. Make sure the lib gets called any time the user clicks on the **Login with Google** button
+
+### REST-ful Conventions
+| Action | Method | Route |
+|---------------------------|--------|--------------|
+| List all records | GET | /streams |
+| Get one particular record | GET | /streams |
+| Create a record | POST | /streams |
+| Update a record | PUT | /streams/:id |
+| Delete a record | DELETE | /streams/:id |
