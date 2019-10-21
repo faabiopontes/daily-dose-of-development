@@ -146,6 +146,7 @@
 8. Callback provided with **authorization token** and profile info for user
 
 #### Steps for Settings Up OAuth
+
 1. Create a new project at https://console.developers.google.com
 2. Set up and OAuth confirmation screen
 3. Generate an OAuth Client ID
@@ -153,10 +154,11 @@
 5. Make sure the lib gets called any time the user clicks on the **Login with Google** button
 
 ### REST-ful Conventions
-| Action | Method | Route |
-|---------------------------|--------|--------------|
-| List all records | GET | /streams |
-| Get one particular record | GET | /streams |
-| Create a record | POST | /streams |
-| Update a record | PUT | /streams/:id |
-| Delete a record | DELETE | /streams/:id |
+
+| Action                    | Method | Route        |
+| ------------------------- | ------ | ------------ |
+| List all records          | GET    | /streams     |
+| Get one particular record | GET    | /streams     |
+| Create a record           | POST   | /streams     |
+| Update a record           | PUT    | /streams/:id |
+| Delete a record           | DELETE | /streams/:id |
