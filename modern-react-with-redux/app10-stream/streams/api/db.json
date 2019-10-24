@@ -1,3 +1,14 @@
 {
-  "streams": []
+  "streams": [
+    {
+      "title": "Title After Thunk",
+      "description": "Description",
+      "id": 1
+    },
+    {
+      "title": "Title After Thunk",
+      "description": "Description",
+      "id": 2
+    }
+  ]
 }
