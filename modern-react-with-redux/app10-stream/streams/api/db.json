@@ -9,6 +9,11 @@
       "title": "Title After Thunk",
       "description": "Description",
       "id": 2
+    },
+    {
+      "title": "Other Stream",
+      "description": "Here's some stream",
+      "id": 3
     }
   ]
 }
