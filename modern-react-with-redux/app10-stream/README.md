@@ -155,10 +155,10 @@
 
 ### REST-ful Conventions
 
-| Action                    | Method | Route        |
-| ------------------------- | ------ | ------------ |
-| List all records          | GET    | /streams     |
-| Get one particular record | GET    | /streams     |
-| Create a record           | POST   | /streams     |
-| Update a record           | PUT    | /streams/:id |
-| Delete a record           | DELETE | /streams/:id |
+| Action                    | Method | Route        | Response         |
+| ------------------------- | ------ | ------------ | ---------------- |
+| List all records          | GET    | /streams     | Array of records |
+| Get one particular record | GET    | /streams     | Single record    |
+| Create a record           | POST   | /streams     | Single record    |
+| Update a record           | PUT    | /streams/:id | Single record    |
+| Delete a record           | DELETE | /streams/:id | Nothing          |
