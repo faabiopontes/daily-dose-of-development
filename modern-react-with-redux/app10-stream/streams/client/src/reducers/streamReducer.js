@@ -5,6 +5,7 @@ import {
   EDIT_STREAM,
   DELETE_STREAM,
 } from '../actions/types';
+import _ from 'lodash';
 
 export default (state, {}, action) => {
   switch (action.type) {
@@ -12,6 +13,9 @@ export default (state, {}, action) => {
     case CREATE_STREAM:
     case EDIT_STREAM:
       return { ...state, [action.payload.id]: action.payload };
+    case DELETE_STREAM:
+      return _.omit(state, action.payload);
+      // Omit creates an object with the elements on the first parameter that doesn't appear in the first parameter
     default:
       return state;
   }
