@@ -7,15 +7,18 @@ import {
 } from '../actions/types';
 import _ from 'lodash';
 
-export default (state, {}, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
+    case FETCH_STREAMS:
+      return { ...state, ..._.mapKeys(action.payload, 'id') };
+    // The Lodash (_) mapKeys function, takes an array of objects, and use a attribute of each object as the key
     case FETCH_STREAM:
     case CREATE_STREAM:
     case EDIT_STREAM:
       return { ...state, [action.payload.id]: action.payload };
     case DELETE_STREAM:
       return _.omit(state, action.payload);
-      // Omit creates an object with the elements on the first parameter that doesn't appear in the first parameter
+    // Omit creates an object with the elements on the first parameter that doesn't appear in the first parameter
     default:
       return state;
   }
