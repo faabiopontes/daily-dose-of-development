@@ -64,7 +64,7 @@
 5. `BrowserRouter` communicates the URL to `Route` components
 6. `Route` components rerender to show new set of components
 
-### Different Types of Navigations
+### Different Types of Router Navigations
 
 - It's all about deployment
 - `BrowserRouter`
@@ -77,6 +77,11 @@
 - `MemoryRouter`
   - Doesn't use the URL to track navigation.
   - Example: localhost:3000**/**
+
+#### Types of Navigation
+
+- Intentional: User clicks on a `Link` component
+- Programmatic: We run code to forcibly navigate the user through our app
 
 ### Traditional Server Navigation
 
