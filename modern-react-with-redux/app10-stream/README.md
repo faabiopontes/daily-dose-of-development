@@ -41,6 +41,7 @@
   - Considering above statement, multiple `Route` components can be rendered on the same path
   - When we don't use the `exact` attribute it's like we ran `extractedPath.contains(path)`
 - When we add attributes without value, like `<Route exact />`, it's the same as `<Route exact={true} />`
+- Each components needs to be designed to work in isolation, fetching it's own data, since the user can access every link directly
 
 ### Bad Navigation
 
