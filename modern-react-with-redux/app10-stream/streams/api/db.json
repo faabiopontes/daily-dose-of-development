@@ -26,6 +26,12 @@
       "description": "Didn't expect that!",
       "userId": "101358317371087562636",
       "id": 5
+    },
+    {
+      "title": "After Refactor",
+      "description": "Stream Created After Reuse Refactor",
+      "userId": "101358317371087562636",
+      "id": 6
     }
   ]
 }
