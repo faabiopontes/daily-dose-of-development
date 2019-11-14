@@ -161,10 +161,11 @@
 
 ### REST-ful Conventions
 
-| Action                    | Method | Route        | Response         |
-| ------------------------- | ------ | ------------ | ---------------- |
-| List all records          | GET    | /streams     | Array of records |
-| Get one particular record | GET    | /streams     | Single record    |
-| Create a record           | POST   | /streams     | Single record    |
-| Update a record           | PUT    | /streams/:id | Single record    |
-| Delete a record           | DELETE | /streams/:id | Nothing          |
+| Action                             | Method | Route        | Response         |
+| ---------------------------------- | ------ | ------------ | ---------------- |
+| List all records                   | GET    | /streams     | Array of records |
+| Get one particular record          | GET    | /streams     | Single record    |
+| Create a record                    | POST   | /streams     | Single record    |
+| Update ALL properties of a record  | PUT    | /streams/:id | Single record    |
+| Update SOME properties of a record | PUT    | /streams/:id | Single record    |
+| Delete a record                    | DELETE | /streams/:id | Nothing          |
