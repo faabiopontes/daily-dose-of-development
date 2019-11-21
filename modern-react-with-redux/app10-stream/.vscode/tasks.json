@@ -19,7 +19,7 @@
     {
       "label": "Start API",
       "type": "shell",
-      "command": "cd streams/api && np]m start",
+      "command": "cd streams/api && npm start",
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -28,6 +28,13 @@
         "showReuseMessage": true,
         "clear": false
       }
+    },
+    {
+      "label": "Start Both",
+      "type": "shell",
+      "command": "echo Bye",
+      "dependsOn": ["Start Streams", "Start API"],
+      "problemMatcher": []
     }
   ]
 }
