@@ -14,24 +14,6 @@
       "title": "Other Stream",
       "description": "Here's some stream",
       "id": 3
-    },
-    {
-      "title": "I updated this Stream ",
-      "description": "This was made by me",
-      "userId": "101358317371087562636",
-      "id": 4
-    },
-    {
-      "title": "Unexpected Behavior",
-      "description": "Didn't expect that!",
-      "userId": "101358317371087562636",
-      "id": 5
-    },
-    {
-      "title": "After Refactor",
-      "description": "Stream Created After Reuse Refactor",
-      "userId": "101358317371087562636",
-      "id": 6
     }
   ]
 }
