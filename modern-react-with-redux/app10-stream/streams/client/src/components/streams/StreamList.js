@@ -76,7 +76,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(StreamList);
+export default connect(mapStateToProps, mapDispatchToProps)(StreamList);
