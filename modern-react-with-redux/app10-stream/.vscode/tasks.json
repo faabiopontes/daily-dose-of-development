@@ -30,10 +30,23 @@
       }
     },
     {
-      "label": "Start Both",
+      "label": "Start RMTP",
+      "type": "shell",
+      "command": "cd streams/rtmpserver && npm start",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "Start App, API, and RMTP",
       "type": "shell",
       "command": "echo Bye",
-      "dependsOn": ["Start Streams", "Start API"],
+      "dependsOn": ["Start Streams", "Start API", "Start RMTP"],
       "problemMatcher": []
     }
   ]
