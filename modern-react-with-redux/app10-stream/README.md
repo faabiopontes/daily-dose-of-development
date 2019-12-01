@@ -169,3 +169,8 @@
 | Update ALL properties of a record  | PUT    | /streams/:id | Single record    |
 | Update SOME properties of a record | PUT    | /streams/:id | Single record    |
 | Delete a record                    | DELETE | /streams/:id | Nothing          |
+
+# Parent Child Data Systems
+
+- Props: Gets data from a parent component to a **direct** child component
+- Context: Gets data from a parent component to **any** nested child component
