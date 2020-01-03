@@ -324,11 +324,11 @@ return [
         'post'           => 'Post|Posts',
         'post_link_text' => 'Alle Posts Anzeigen',
         'post_text'      => 'Sie haben :count :string in Ihrer Datenbank. Klicken Sie auf untenstehenden Button ',
-                            'um alle Posts zu sehen.',
+        'um alle Posts zu sehen.',
         'user'           => 'Benutzer|Benutzer',
         'user_link_text' => 'Alle Benutzer Anzeigen',
         'user_text'      => 'Sie haben :count :string in Ihrer Datenbank. Klicken Sie auf untenstehenden Button ',
-                            'um alle Benutzer zu sehen.',
+        'um alle Benutzer zu sehen.',
     ],
 
     'form' => [
