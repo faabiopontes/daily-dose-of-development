@@ -26,5 +26,6 @@ Ways out of using the data
 6. `Button` and `Field` render appropriate text to the screen
 
 ## Context Provider or Consumer
+
 - In the `Provider` we are **setting** the value for a specific context, like our `LanguageContext`
 - In the `Consumer` we are **getting** the value for the context
