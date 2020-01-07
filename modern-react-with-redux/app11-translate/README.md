@@ -29,3 +29,11 @@ Ways out of using the data
 
 - In the `Provider` we are **setting** the value for a specific context, like our `LanguageContext`
 - In the `Consumer` we are **getting** the value for the context
+
+## Redux or Context?
+
+| Redux                                             | Context                                |
+| ------------------------------------------------- | -------------------------------------- |
+| Distributes data to various components            | Distributes data to various components |
+| Centralizes data in a store                       |                                        |
+| Provides mechanism for changing data in the store |                                        |
