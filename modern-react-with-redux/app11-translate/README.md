@@ -37,3 +37,9 @@ Ways out of using the data
 | Distributes data to various components            | Distributes data to various components |
 | Centralizes data in a store                       |                                        |
 | Provides mechanism for changing data in the store |                                        |
+
+## And what if I want to use Context in place of Redux
+
+- We need to be able to get data to any component in our hierarchy
+- We need to be able to separate our view logic from business logic
+- We need to be able to split up business logic (not have a single file with 10000 lines of code)
