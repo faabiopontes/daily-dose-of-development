@@ -32,11 +32,15 @@ Ways out of using the data
 
 ## Redux or Context?
 
-| Redux                                             | Context                                |
-| ------------------------------------------------- | -------------------------------------- |
-| Distributes data to various components            | Distributes data to various components |
-| Centralizes data in a store                       |                                        |
-| Provides mechanism for changing data in the store |                                        |
+| **WINNER** - Redux                         | Context                                                       |
+| ------------------------------------------ | ------------------------------------------------------------- |
+| Distributes data to various components     | Distributes data to various components                        |
+| Centralizes data in a store                |                                                               |
+| Provides mechanism to change data in store |                                                               |
+| ---                                        | ---                                                           |
+| Excellent documentation                    | No need for an extra lib                                      |
+| Well-known design patterns                 | Hard to build a 'store' component with cross cutting concerns |
+| Tremendous amount of open source libs      |                                                               |
 
 ## And what if I want to use Context in place of Redux
 
