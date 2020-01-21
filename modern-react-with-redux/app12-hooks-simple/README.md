@@ -4,3 +4,12 @@
 
 Hooks are used to add State and a kind of lifecycle methods to Function-Base Components
 Since logic is isolated, it's easy to share logic between components
+
+## Types of Hooks
+
+| Name       | Goal                                                      |
+| ---------- | --------------------------------------------------------- |
+| useState   | Allow a functional component to use component-level state |
+| useEffect  | Allow a functional component to use `lifecycle methods`   |
+| useContext | Allow a functional component to use the context system    |
+| useRef     | Allow a functional component to use the ref system        |
