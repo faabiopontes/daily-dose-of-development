@@ -22,3 +22,9 @@ Since logic is isolated, it's easy to share logic between components
 - initialValue: Starting value for this piece of state, similar to when we initialized our state object
 - currentValue: Contains the present value of this piece of state
 - setCurrentValue: Function to call when we want to update our state (and rerender)
+
+## JSON Placeholder - By Typicode
+
+- Link: http://jsonplaceholder.typicode.com/
+- Endpoint Posts: http://jsonplaceholder.typicode.com/posts
+- Endpoint Todos: http://jsonplaceholder.typicode.com/todos
