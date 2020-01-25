@@ -28,3 +28,12 @@ Since logic is isolated, it's easy to share logic between components
 - Link: http://jsonplaceholder.typicode.com/
 - Endpoint Posts: http://jsonplaceholder.typicode.com/posts
 - Endpoint Todos: http://jsonplaceholder.typicode.com/todos
+
+## ComponentDidUpdate VS ComponentDidMount
+
+1. App component created, initializes state `resource` of `posts`
+2. App renders `ResourceList`
+3. `ResourceList.componentDidMount` called, fetches posts
+4. Fetch completed, `setState` called, number of posts rendered
+5. We click `todos` button, App updates its state, rerenders itself and `ResourceList`
+6. `Resource` was already "mounted", so `componentDidMount` is not called a second time!
