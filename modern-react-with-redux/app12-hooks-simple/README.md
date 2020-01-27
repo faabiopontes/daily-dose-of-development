@@ -23,6 +23,14 @@ Since logic is isolated, it's easy to share logic between components
 - currentValue: Contains the present value of this piece of state
 - setCurrentValue: Function to call when we want to update our state (and rerender)
 
+## Example of useEffect
+
+```js
+useEffect(() => {
+  fetchResource(resource);
+}, []);
+```
+
 ## JSON Placeholder - By Typicode
 
 - Link: http://jsonplaceholder.typicode.com/
