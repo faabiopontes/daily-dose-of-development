@@ -28,8 +28,10 @@ Since logic is isolated, it's easy to share logic between components
 ```js
 useEffect(() => {
   fetchResource(resource);
-}, []);
+}, [resource]);
 ```
+
+- When the `[resource]` changes, the arrow function containing `fetchResource` is called
 
 ## JSON Placeholder - By Typicode
 
