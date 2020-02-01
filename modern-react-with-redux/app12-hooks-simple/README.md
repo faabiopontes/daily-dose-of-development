@@ -33,6 +33,13 @@ useEffect(() => {
 
 - When the `[resource]` changes, the arrow function containing `fetchResource` is called
 
+### Does It Get Called?
+
+- If the second parameter **is not defined**, the arrow function is called **nonstop**
+- If the second parameter is defined as something that **doesn't change**, the arrow function is called **once**
+- Objects are **always** considered to be different, so if this is the case it's called **nonstop** too
+- And as you know, when the second parameter **changes**, the arrow function is called **once**
+
 ## JSON Placeholder - By Typicode
 
 - Link: http://jsonplaceholder.typicode.com/
