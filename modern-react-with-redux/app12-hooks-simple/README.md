@@ -32,6 +32,8 @@ useEffect(() => {
 ```
 
 - When the `[resource]` changes, the arrow function containing `fetchResource` is called
+- An effect must return a function or nothing.
+- You can't return a Promise, it should be a IIFE (A function that's created around parenthesis and invoked right away)
 
 ### Does It Get Called?
 
