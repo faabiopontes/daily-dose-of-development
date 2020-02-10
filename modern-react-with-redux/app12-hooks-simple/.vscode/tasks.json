@@ -6,7 +6,8 @@
     {
       "label": "NPM Start",
       "type": "shell",
-      "command": "npm start"
+      "command": "npm install && npm start",
+      "problemMatcher": []
     }
   ]
 }
