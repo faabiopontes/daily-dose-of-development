@@ -1,59 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-
 import SeasonDisplay from "./SeasonDisplay";
 import Spinner from "./Spinner";
 
-class App extends React.Component {
-  state = { lat: null, long: null, errorMessage: "" };
+const App = () => {
+  const [lat, setLat] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  renderContent() {
-    if (this.state.errorMessage && !this.state.lat) {
-      return <div>Error: {this.state.errorMessage}</div>;
-    }
-    if (!this.state.errorMessage && this.state.lat) {
-      return <SeasonDisplay lat={this.state.lat} />;
-    }
-    return <Spinner message="Please accept location request" />;
-  }
-
-  // React says we have to define render!!
-  render() {
-    console.log("My component render function was called");
-    return (
-      <div style={{ border: "10px solid black" }}>{this.renderContent()}</div>
-    );
-  }
-
-  componentDidMount() {
-    console.log("My component was rendered to the screen");
-
+  useEffect(() => {
     window.navigator.geolocation.getCurrentPosition(
-      position => this.setState({ lat: position.coords.latitude }),
-      err => this.setState({ errorMessage: err.message })
+      position => setLat(position.coords.latitude),
+      err => setErrorMessage(err.message)
     );
+  }, []);
+
+  let content;
+  if (errorMessage) {
+    content = <div>Error: {errorMessage}</div>;
+  } else if (lat) {
+    content = <SeasonDisplay lat={lat} />;
+  } else {
+    content = <Spinner message="Please accept location request" />;
   }
 
-  componentDidUpdate() {
-    console.log("My component was just updated - it re-rendered!");
-  }
-
-  shouldComponentUpdate() {
-    console.log(
-      "My component is considering if it should be re-rendered or not"
-    );
-    return true;
-  }
-
-  static getDerivedStateFromProps(state) {
-    console.log("getDerivedStateFromProps", state);
-    return state;
-  }
-
-  getSnapshotBeforeUpdate(state) {
-    console.log("getSnapshotBeforeUpdate", state);
-    return state;
-  }
-}
+  return <div className="border red">{content}</div>;
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));
