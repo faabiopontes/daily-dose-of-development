@@ -25,3 +25,7 @@ This is app intended to consolidate or learning related to React and Redux, whil
 7. Some reducer sees the action, returns the data off the `payload`
 8. Because we generated some new state object, redux/react-redux cause our React app to be rerendered
    We get fetched data into a component by generating new state in our redux store, then getting that into our component through **mapStateToProps**
+
+## What's wrong with 'fetchPosts'?
+1. Action creators must return plain JS objects with a type property. With `async`, `await`, what we write is not actually what runs on the browser.
+2. By the time our action gets to a reducer, we won't have fetched our data
