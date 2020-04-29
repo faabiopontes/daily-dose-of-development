@@ -27,5 +27,19 @@ This is app intended to consolidate or learning related to React and Redux, whil
    We get fetched data into a component by generating new state in our redux store, then getting that into our component through **mapStateToProps**
 
 ## What's wrong with 'fetchPosts'?
+
 1. Action creators must return plain JS objects with a type property. With `async`, `await`, what we write is not actually what runs on the browser.
 2. By the time our action gets to a reducer, we won't have fetched our data. Because requests run asynchronious to the flow of our code.
+
+## Types of action creator
+
+- Syncronous: Instantly returns an action with data ready to go
+- Asynchronous: Takes some amount of time for it to get its data ready to go
+
+## Middlewares in Redux
+
+Function that gets called with every action we dispatch
+Has the ability to **STOP, MODIFY,** or otherwise mess around with actions
+Tons of open source middleware exist
+Most popullar use of middleware is for dealing with async actions
+We are going to use a middleware called `Redux-Thunk` to solve our async issues
