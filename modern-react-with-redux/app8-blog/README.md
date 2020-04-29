@@ -28,4 +28,4 @@ This is app intended to consolidate or learning related to React and Redux, whil
 
 ## What's wrong with 'fetchPosts'?
 1. Action creators must return plain JS objects with a type property. With `async`, `await`, what we write is not actually what runs on the browser.
-2. By the time our action gets to a reducer, we won't have fetched our data
+2. By the time our action gets to a reducer, we won't have fetched our data. Because requests run asynchronious to the flow of our code.
