@@ -7,6 +7,11 @@
       "label": "Start Back-end",
       "type": "shell",
       "command": "cd dev-concepts/backend && yarn dev"
+    },
+    {
+      "label": "Kill All Node",
+      "type": "shell",
+      "command": "killall node"
     }
   ]
 }
