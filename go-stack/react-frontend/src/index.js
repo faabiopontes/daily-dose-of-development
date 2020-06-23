@@ -1,3 +1,5 @@
-import { sum } from './sum';
+import React from 'react';
+import { render } from 'react-dom';
+import App from './App';
 
-console.log(sum(1, 7));
+render(<App />, document.getElementById('app'));
