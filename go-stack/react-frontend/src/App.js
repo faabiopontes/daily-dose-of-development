@@ -9,16 +9,21 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    api.get('projects').then(response => {
+    api.get('projects').then((response) => {
       setProjects(response.data);
     });
   }, []);
 
-  const handleAddProject = () => {
-    let project = `New project ${Date.now()}`;
+  const handleAddProject = async () => {
+    let project = {
+      title: `New project ${Date.now()}`,
+      owner: 'Fabio Pontes',
+    };
+
+    let response = await api.post('projects', project);
+    project = response.data;
 
     setProjects([...projects, project]);
-
   };
 
   return (
@@ -28,7 +33,7 @@ function App() {
       {/* <img width="300" src={backgroundImage} /> */}
 
       <ul>
-        {projects.map(({ id, title, owner}) => (
+        {projects.map(({ id, title, owner }) => (
           <li key={id}>{`${title} - ${owner}`}</li>
         ))}
       </ul>

@@ -9,6 +9,11 @@
       "command": "cd dev-concepts/backend && yarn dev"
     },
     {
+      "label": "Start Front-end",
+      "type": "shell",
+      "command": "cd react-frontend && yarn dev"
+    },
+    {
       "label": "Kill All Node",
       "type": "shell",
       "command": "killall node"
