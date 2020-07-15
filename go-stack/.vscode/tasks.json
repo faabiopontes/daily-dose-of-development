@@ -14,6 +14,16 @@
       "command": "cd react-frontend && yarn dev"
     },
     {
+      "label": "Start Android",
+      "type": "shell",
+      "command": "cd mobile-react-native/mobile && npx react-native run-android"
+    },
+    {
+      "label": "Start Metro Bundler",
+      "type": "shell",
+      "command": "cd mobile-react-native/mobile && yarn start"
+    },
+    {
       "label": "Kill All Node",
       "type": "shell",
       "command": "killall node"
