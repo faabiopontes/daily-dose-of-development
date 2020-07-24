@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, FlatList, Text, StyleSheet, StatusBar } from 'react-native';
+import {
+  SafeAreaView,
+  FlatList,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  StatusBar,
+} from 'react-native';
 
 import api from '../services/api';
 
@@ -15,15 +22,30 @@ export default function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    api.get('projects').then(response => {
-      console.log("resolve");
-      console.log(response.data);
-      setProjects(response.data);
-    }).catch(response => {
-      console.log("catch");
-      console.log(response);
-    });
+    api
+      .get('projects')
+      .then((response) => {
+        console.log('resolve');
+        console.log(response.data);
+        setProjects(response.data);
+      })
+      .catch((response) => {
+        console.log('catch');
+        console.log(response);
+      });
   }, []);
+
+  async function handleAddProject() {
+    console.log('handleAddProject');
+    const response = await api.post('projects', {
+      title: `New project ${Date.now()}`,
+      owner: 'Fabio Pontes',
+    });
+
+    const project = response.data;
+
+    setProjects([...projects, project]);
+  }
 
   return (
     <>
@@ -33,18 +55,17 @@ export default function App() {
         <FlatList
           style={styles.container}
           data={projects}
-          keyExtractor={project => project.id}
+          keyExtractor={(project) => project.id}
           renderItem={({ item: project }) => (
             <Text style={styles.project}>{project.title}</Text>
           )}
         />
+        <TouchableOpacity activeOpacity={0.6} style={styles.button}>
+          <Text style={styles.buttonText} onPress={handleAddProject}>
+            Add project
+          </Text>
+        </TouchableOpacity>
       </SafeAreaView>
-
-      {/* <View style={styles.container}>
-        {projects.map(project => (
-        <Text key={project.id} style={styles.project}>{project.title}</Text>
-        ))}
-      </View> */}
     </>
   );
 }
@@ -58,5 +79,19 @@ const styles = StyleSheet.create({
   project: {
     color: '#FFF',
     fontSize: 30,
+  },
+
+  button: {
+    backgroundColor: '#FFF',
+    margin: 20,
+    height: 50,
+    borderRadius: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  buttonText: {
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
