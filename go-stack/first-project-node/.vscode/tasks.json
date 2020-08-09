@@ -6,7 +6,17 @@
     {
       "label": "yarn dev:server",
       "type": "shell",
-      "command": "yarn dev:server"
+      "command": "yarn && yarn dev:server"
+    },
+    {
+      "label": "yarn typeorm migration:run",
+      "type": "shell",
+      "command": "yarn && yarn typeorm migration:run"
+    },
+    {
+      "label": "yarn typeorm migration:revert",
+      "type": "shell",
+      "command": "yarn && yarn typeorm migration:revert"
     }
   ]
 }
