@@ -17,6 +17,21 @@
       "label": "yarn typeorm migration:revert",
       "type": "shell",
       "command": "yarn && yarn typeorm migration:revert"
+    },
+    {
+      "label": "gostack_postgres: docker run",
+      "type": "shell",
+      "command": "docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres"
+    },
+    {
+      "label": "gostack_postgres: docker start",
+      "type": "shell",
+      "command": "docker start gostack_postgres"
+    },
+    {
+      "label": "gostack_postgres: docker stop",
+      "type": "shell",
+      "command": "docker stop gostack_postgres"
     }
   ]
 }
