@@ -1,2 +1,2 @@
 # daily-dose-of-development
-Daily Dose of Development
+Here are my daily learnings of web development.
