@@ -1,57 +1,98 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 import { Header, RepositoryInfo, Issues } from './styles';
 import logoImg from '../../assets/appLogo.svg';
+import api from '../../services/api';
 
 interface RepositoryParams {
   repository: string;
 }
 
+interface Repository {
+  full_name: string;
+  description: string;
+  stargazers_count: number;
+  open_issues_count: number;
+  forks: number;
+  owner: {
+    login: string;
+    avatar_url: string;
+  }
+}
+
+interface Issue {
+  id: number;
+  title: string;
+  html_url: string;
+  user: {
+    login: string;
+  }
+}
+
 const Repository: React.FC = () => {
   const { params } = useRouteMatch<RepositoryParams>();
+  const [repository, setRepository] = useState<Repository | null>(null);
+  const [issues, setIssues] = useState<Issue[]>([]);
+
+  useEffect(() => {
+    api.get(`repos/${params.repository}`).then((response) => {
+      setRepository(response.data);
+    });
+    api.get(`repos/${params.repository}/issues`).then((response) => {
+      setIssues(response.data);
+    });
+  }, [params.repository]);
+
   return (
     <>
       <Header>
         <img src={logoImg} alt="Github Explorer" />
-        <Link to="/dashboard">
+        <Link to="/repository/vuejs/vue">
           <FiChevronLeft size={16} />
           Voltar
         </Link>
       </Header>
+      { repository && (
       <RepositoryInfo>
         <Header>
-          <img src="https://avatars3.githubusercontent.com/u/2223935?s=460&u=cea782b4b2009e470e5166cee67b2d03ebc21e47&v=4" alt="faabiopontes" />
+          <img
+            src={repository.owner.avatar_url}
+            alt={repository.owner.login}
+          />
           <div>
-            <strong>faabiopontes/daily-dose-of-development</strong>
-            <p>descrição do repositório</p>
+            <strong>{repository.full_name}</strong>
+            <p>{repository.description}</p>
           </div>
         </Header>
         <ul>
           <li>
-            <strong>0</strong>
+            <strong>{repository.stargazers_count}</strong>
             <span>Stars</span>
           </li>
           <li>
-            <strong>0</strong>
+            <strong>{repository.forks}</strong>
             <span>Forks</span>
           </li>
           <li>
-            <strong>0</strong>
+            <strong>{repository.open_issues_count}</strong>
             <span>Issues abertas</span>
           </li>
         </ul>
       </RepositoryInfo>
+      )}
       <Issues>
-        <Link to="fsp">
-          <div>
-            <strong>repository.full_name</strong>
-            <p>repository.description</p>
-          </div>
+        {issues.map((issue) => (
+          <a key={issue.id} href={issue.html_url}>
+            <div>
+              <strong>{issue.title}</strong>
+              <p>{issue.user.login}</p>
+            </div>
 
-          <FiChevronRight size={20} />
-        </Link>
+            <FiChevronRight size={20} />
+          </a>
+        ))}
       </Issues>
     </>
   );

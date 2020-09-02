@@ -28,6 +28,7 @@ export const RepositoryInfo = styled.section`
   header {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 
     img {
       width: 120px;
