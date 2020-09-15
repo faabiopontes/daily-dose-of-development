@@ -10,7 +10,7 @@ import logoImg from '../../assets/logo.svg';
 import Input from '../../components/input';
 import Button from '../../components/button';
 import getValidationErrors from '../../utils/getValidationErrors';
-import AuthContext from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 interface FormInputs {
   email: string;
@@ -20,30 +20,38 @@ interface FormInputs {
 const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const { name } = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
 
-  const handleSubmit = useCallback(async (data: FormInputs): Promise<void> => {
-    try {
-      if (formRef.current) {
-        formRef.current.setErrors({});
-      }
+  const handleSubmit = useCallback(
+    async (data: FormInputs): Promise<void> => {
+      try {
+        if (formRef.current) {
+          formRef.current.setErrors({});
+        }
 
-      const schema = Yup.object().shape({
-        email: Yup.string()
-          .required('E-mail obrigatório')
-          .email('Digite um e-mail válido'),
-        password: Yup.string().required('Senha obrigatória'),
-      });
-      await schema.validate(data, {
-        abortEarly: false,
-      });
-    } catch (err) {
-      if (formRef.current) {
-        const parsedErrors = getValidationErrors(err);
-        formRef.current.setErrors(parsedErrors);
+        const schema = Yup.object().shape({
+          email: Yup.string()
+            .required('E-mail obrigatório')
+            .email('Digite um e-mail válido'),
+          password: Yup.string().required('Senha obrigatória'),
+        });
+        await schema.validate(data, {
+          abortEarly: false,
+        });
+
+        signIn({
+          email: data.email,
+          password: data.password,
+        });
+      } catch (err) {
+        if (formRef.current) {
+          const parsedErrors = getValidationErrors(err);
+          formRef.current.setErrors(parsedErrors);
+        }
       }
-    }
-  }, []);
+    },
+    [signIn],
+  );
 
   return (
     <Container>
