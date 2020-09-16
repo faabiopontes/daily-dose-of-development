@@ -18,6 +18,7 @@ interface IUser {
 interface IAuthContext {
   user: IUser;
   signIn(data: IAuthParams): Promise<void>;
+  signOut(): void;
 }
 
 interface IAuthState {
@@ -39,6 +40,7 @@ const AuthProvider: React.FC = ({ children }) => {
 
     return {} as IAuthState;
   });
+
   const signIn = useCallback(async ({ email, password }: IAuthParams) => {
     const response = await api.post('/sessions', {
       email,
@@ -51,8 +53,16 @@ const AuthProvider: React.FC = ({ children }) => {
     localStorage.setItem(`${hash}:user`, JSON.stringify(user));
     setData({ token, user });
   }, []);
+
+  const signOut = useCallback(() => {
+    localStorage.removeItem(`${hash}:token`);
+    localStorage.removeItem(`${hash}:user`);
+
+    setData({} as IAuthState);
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn }}>
+    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
