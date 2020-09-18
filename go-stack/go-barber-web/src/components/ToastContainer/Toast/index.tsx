@@ -10,7 +10,7 @@ import { Container } from './styles';
 
 interface IToastProps {
   toast: IToastMessage;
-  style: object;
+  style: Record<string, unknown>;
 }
 
 const icons = {
