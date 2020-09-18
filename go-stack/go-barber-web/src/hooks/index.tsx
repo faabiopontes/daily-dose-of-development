@@ -1,5 +1,4 @@
 import React from 'react';
-import ToastContainer from '../components/ToastContainer';
 import { AuthProvider } from './auth';
 import { ToastProvider } from './toast';
 
