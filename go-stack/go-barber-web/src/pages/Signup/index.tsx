@@ -4,46 +4,69 @@ import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Container, Content, Background, AnimationContainer } from './styles';
 import logoImg from '../../assets/logo.svg';
 
 import Input from '../../components/input';
 import Button from '../../components/button';
 import getValidationErrors from '../../utils/getValidationErrors';
+import api from '../../services/api';
+import { useToast } from '../../hooks/toast';
 
 interface FormInputs {
-  name?: string;
-  email?: string;
+  name: string;
+  email: string;
   password?: string;
 }
 
 const Signup: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const { addToast } = useToast();
+  const { push: historyPush } = useHistory();
 
-  const handleSubmit = useCallback(async (data: FormInputs): Promise<void> => {
-    try {
-      if (formRef.current) {
-        formRef.current.setErrors({});
-      }
+  const handleSubmit = useCallback(
+    async (data: FormInputs): Promise<void> => {
+      try {
+        if (formRef.current) {
+          formRef.current.setErrors({});
+        }
 
-      const schema = Yup.object().shape({
-        name: Yup.string().required('Nome obrigatório'),
-        email: Yup.string()
-          .required('E-mail obrigatório')
-          .email('Digite um e-mail válido'),
-        password: Yup.string().min(6, 'No mínimo 6 digitos'),
-      });
-      await schema.validate(data, {
-        abortEarly: false,
-      });
-    } catch (err) {
-      if (formRef.current) {
-        const parsedErrors = getValidationErrors(err);
-        formRef.current.setErrors(parsedErrors);
+        const schema = Yup.object().shape({
+          name: Yup.string().required('Nome obrigatório'),
+          email: Yup.string()
+            .required('E-mail obrigatório')
+            .email('Digite um e-mail válido'),
+          password: Yup.string().min(6, 'No mínimo 6 digitos'),
+        });
+        await schema.validate(data, {
+          abortEarly: false,
+        });
+
+        await api.post('/users', data);
+        addToast({
+          type: 'success',
+          title: 'Cadastro realizado!',
+          description: 'Você já pode fazer logon no GoBarber!',
+        });
+        historyPush('/');
+      } catch (err) {
+        if (err instanceof Yup.ValidationError && formRef.current) {
+          const parsedErrors = getValidationErrors(err);
+          formRef.current.setErrors(parsedErrors);
+
+          return;
+        }
+
+        addToast({
+          type: 'error',
+          title: 'Erro no cadastro',
+          description: 'Ocorreu um erro ao fazer cadatro, tente novamente',
+        });
       }
-    }
-  }, []);
+    },
+    [addToast, historyPush],
+  );
 
   return (
     <Container>

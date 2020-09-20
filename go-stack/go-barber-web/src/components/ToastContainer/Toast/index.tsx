@@ -34,8 +34,7 @@ const Toast: React.FC<IToastProps> = ({ toast, style }) => {
 
   return (
     <Container
-      type={toast.type}
-      hasDescription={Boolean(toast.description)}
+      styled={{ hasDescription: Boolean(toast.description), type: toast.type }}
       style={style}
     >
       {icons[toast.type || 'info']}
