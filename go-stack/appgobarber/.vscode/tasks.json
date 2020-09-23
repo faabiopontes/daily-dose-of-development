@@ -1,0 +1,22 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Metro Bundler",
+      "type": "shell",
+      "command": "yarn && yarn start"
+    },
+    {
+      "label": "Run Android",
+      "type": "shell",
+      "command": "yarn && yarn android"
+    },
+    {
+      "label": "Run iOS",
+      "type": "shell",
+      "command": "yarn && yarn ios"
+    }
+  ]
+}
