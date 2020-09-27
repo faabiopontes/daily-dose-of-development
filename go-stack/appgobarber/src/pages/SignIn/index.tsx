@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Image, KeyboardAvoidingView, Platform, View } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import { Form } from '@unform/mobile';
+import { FormHandles } from '@unform/core';
 import {
   Container,
   Title,
@@ -16,8 +18,18 @@ import logoImg from '../../assets/logo.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
+interface ISignInFormInputs {
+  email: string;
+  password: string;
+}
+
 const SignIn: React.FC = () => {
   const navigation = useNavigation();
+  const formRef = useRef<FormHandles>(null);
+
+  const handleSignIn = useCallback((data: ISignInFormInputs) => {
+    console.log(data);
+  }, []);
 
   return (
     <>
@@ -36,14 +48,22 @@ const SignIn: React.FC = () => {
               <Title>Faça seu logon</Title>
             </View>
 
-            <Input name="email" icon="mail" placeholder="E-mail" />
+            <Form ref={formRef} onSubmit={handleSignIn}>
+              <Input name="email" icon="mail" placeholder="E-mail" />
 
-            <Input name="password" icon="lock" placeholder="Senha" />
+              <Input name="password" icon="lock" placeholder="Senha" />
+            </Form>
 
-            <Button onPress={() => console.log('FSP')}>Entrar</Button>
+            <Button onPress={() => formRef.current?.submitForm()}>
+              Entrar
+            </Button>
 
-            <ForgotPassword onPress={() => {}}>
-              <ForgotPasswordText>Esqueci minha Senha</ForgotPasswordText>
+            <ForgotPassword
+              onPress={() => {
+                console.log('Esqueci minha senha');
+              }}
+            >
+              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
           </Container>
         </ScrollView>
