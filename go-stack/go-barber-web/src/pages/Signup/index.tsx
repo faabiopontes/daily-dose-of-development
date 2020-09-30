@@ -54,8 +54,6 @@ const Signup: React.FC = () => {
         if (err instanceof Yup.ValidationError && formRef.current) {
           const parsedErrors = getValidationErrors(err);
           formRef.current.setErrors(parsedErrors);
-
-          return;
         }
 
         addToast({

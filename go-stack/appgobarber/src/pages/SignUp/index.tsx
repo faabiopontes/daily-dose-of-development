@@ -1,15 +1,24 @@
 import React, { useCallback, useRef } from 'react';
-import { Image, KeyboardAvoidingView, Platform, View } from 'react-native';
+import {
+  Alert,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  View,
+} from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
+import * as Yup from 'yup';
+
 import { Container, Title, BackToSignin, BackToSigninText } from './styles';
 import logoImg from '../../assets/logo.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import getValidationErrors from '../../utils/getValidationErrors';
 
 interface ISignUpFormInputs {
   name: string;
@@ -27,8 +36,49 @@ const SignUp: React.FC = () => {
   const emailInputRef = useRef<ITextInputWithFocus>(null);
   const passwordInputRef = useRef<ITextInputWithFocus>(null);
 
-  const handleSignUp = useCallback((data: ISignUpFormInputs) => {
-    console.log(data);
+  const handleSignUp = useCallback(async (data: ISignUpFormInputs): Promise<
+    void
+  > => {
+    try {
+      if (formRef.current) {
+        formRef.current.setErrors({});
+      }
+
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome obrigatório'),
+        email: Yup.string()
+          .required('E-mail obrigatório')
+          .email('Digite um e-mail válido'),
+        password: Yup.string().min(6, 'No mínimo 6 digitos'),
+      });
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      // await api.post('/users', data);
+      // addToast({
+      //   type: 'success',
+      //   title: 'Cadastro realizado!',
+      //   description: 'Você já pode fazer logon no GoBarber!',
+      // });
+      // historyPush('/');
+    } catch (err) {
+      if (err instanceof Yup.ValidationError && formRef.current) {
+        const parsedErrors = getValidationErrors(err);
+        formRef.current.setErrors(parsedErrors);
+      }
+
+      Alert.alert(
+        'Erro no cadastro',
+        'Ocorreu um erro ao fazer cadatro, tente novamente',
+      );
+
+      // addToast({
+      //   type: 'error',
+      //   title: 'Erro no cadastro',
+      //   description: 'Ocorreu um erro ao fazer cadatro, tente novamente',
+      // });
+    }
   }, []);
 
   return (

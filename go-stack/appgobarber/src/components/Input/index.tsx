@@ -31,7 +31,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
 ) => {
   const inputElementRef = useRef<any>(null);
 
-  const { registerField, defaultValue = '', fieldName } = useField(name);
+  const { registerField, defaultValue = '', fieldName, error } = useField(name);
   const inputValueRef = useRef<InputValueReference>({ value: defaultValue });
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
