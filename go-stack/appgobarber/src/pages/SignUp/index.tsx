@@ -19,6 +19,7 @@ import logoImg from '../../assets/logo.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import getValidationErrors from '../../utils/getValidationErrors';
+import api from '../../services/api';
 
 interface ISignUpFormInputs {
   name: string;
@@ -55,13 +56,14 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
 
-      // await api.post('/users', data);
-      // addToast({
-      //   type: 'success',
-      //   title: 'Cadastro realizado!',
-      //   description: 'Você já pode fazer logon no GoBarber!',
-      // });
-      // historyPush('/');
+      await api.post('/users', data);
+
+      Alert.alert(
+        'Cadastro realizado',
+        'Você já pode fazer logon no GoBarber!',
+      );
+
+      navigation.navigate('SignIn');
     } catch (err) {
       if (err instanceof Yup.ValidationError && formRef.current) {
         const parsedErrors = getValidationErrors(err);
@@ -72,12 +74,6 @@ const SignUp: React.FC = () => {
         'Erro no cadastro',
         'Ocorreu um erro ao fazer cadatro, tente novamente',
       );
-
-      // addToast({
-      //   type: 'error',
-      //   title: 'Erro no cadastro',
-      //   description: 'Ocorreu um erro ao fazer cadatro, tente novamente',
-      // });
     }
   }, []);
 
