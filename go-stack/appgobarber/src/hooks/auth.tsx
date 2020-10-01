@@ -24,6 +24,7 @@ interface IUser {
 
 interface IAuthContext {
   user: IUser;
+  loading: boolean;
   signIn(data: IAuthParams): Promise<void>;
   signOut(): void;
 }
@@ -38,6 +39,7 @@ const AuthContext = createContext({} as IAuthContext);
 const AuthProvider: React.FC = ({ children }) => {
   const hash = '@GoBarber';
   const [data, setData] = useState<IAuthState>({} as IAuthState);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadStoragedData = async () => {
@@ -50,7 +52,7 @@ const AuthProvider: React.FC = ({ children }) => {
         setData({ token, user: JSON.parse(user) });
       }
 
-      setData({} as IAuthState);
+      setLoading(false);
     };
     loadStoragedData();
   }, []);
@@ -67,8 +69,6 @@ const AuthProvider: React.FC = ({ children }) => {
       [`${hash}:token`, token],
       [`${hash}:user`, JSON.stringify(user)],
     ]);
-    console.log(token);
-    console.log(user);
     setData({ token, user });
   }, []);
 
@@ -79,7 +79,7 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
+    <AuthContext.Provider value={{ user: data.user, loading, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
