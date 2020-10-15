@@ -4,6 +4,7 @@ import fs from 'fs';
 import User from '../entities/User';
 import uploadConfig from '../../../config/upload';
 import AppError from '../../../shared/errors/AppError';
+import { UserWithOptionalPassword } from '../@types';
 
 interface Request {
   user_id: string;
@@ -11,9 +12,10 @@ interface Request {
 }
 
 class UpdateUserAvatarService {
-  public async execute({ user_id, avatarFilename }: Request): Promise<User> {
+  public async execute({ user_id, avatarFilename }: Request): Promise<UserWithOptionalPassword> {
     const usersRepository = getRepository(User);
-    const user = await usersRepository.findOne(user_id);
+    const user = await usersRepository.findOne(user_id) as UserWithOptionalPassword;
+    delete user.password;
 
     if (!user) {
       throw new AppError('Only authenticated users can change avatar.', 401);

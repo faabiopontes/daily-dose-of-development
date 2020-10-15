@@ -2,6 +2,7 @@ import { getRepository } from 'typeorm';
 import { hash } from 'bcryptjs';
 import User from '../entities/User';
 import AppError from '../../../shared/errors/AppError';
+import { UserWithOptionalPassword } from '../@types';
 
 interface Request {
   name: string;
@@ -10,7 +11,7 @@ interface Request {
 }
 
 class CreateUserService {
-  public async execute({ name, email, password }: Request): Promise<User> {
+  public async execute({ name, email, password }: Request): Promise<UserWithOptionalPassword> {
     const usersRepository = getRepository(User);
 
     const checkUserExists = await usersRepository.findOne({
