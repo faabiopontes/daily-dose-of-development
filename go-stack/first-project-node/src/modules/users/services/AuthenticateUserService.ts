@@ -2,6 +2,7 @@ import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import authConfig from '@config/auth';
 import AppError from '@shared/errors/AppError';
+import { inject, injectable } from 'tsyringe';
 import { IUserWithoutPassword } from '../@types';
 import IUsersRepository from '../repositories/IUsersRepository';
 
@@ -16,12 +17,12 @@ interface IResponse {
   token: string;
 }
 
+@injectable()
 class AuthenticateUserService {
-  private usersRepository: IUsersRepository;
-
-  constructor(usersRepository: IUsersRepository) {
-    this.usersRepository = usersRepository;
-  }
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository
+  ) {}
 
   public async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = (await this.usersRepository.findByEmail(
