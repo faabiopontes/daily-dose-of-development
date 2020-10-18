@@ -1,5 +1,5 @@
 import User from '../infra/typeorm/entities/User';
 
-export interface UserWithOptionalPassword extends User {
-  password?: string;
+export interface IUserWithoutPassword extends User {
+  password: never;
 }
