@@ -32,6 +32,11 @@
       "label": "gostack_postgres: docker stop",
       "type": "shell",
       "command": "docker stop gostack_postgres"
+    },
+    {
+      "label": "yarn test",
+      "type": "shell",
+      "command": "yarn && yarn test"
     }
   ]
 }
