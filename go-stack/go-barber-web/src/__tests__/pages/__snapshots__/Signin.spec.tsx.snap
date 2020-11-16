@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn Page should be rendered 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-AxjAm kDpNAq"
+      >
+        <div
+          class="sc-AxirZ dtAPxz"
+        >
+          <div
+            class="sc-AxiKw hCmOla"
+          >
+            <img
+              alt="App Logo"
+              src="logo.svg"
+            />
+            <form>
+              <h1>
+                Faça seu logon
+              </h1>
+              <div
+                class="sc-AxgMl hNmEyI"
+              >
+                <svg
+                  fill="none"
+                  height="20"
+                  size="20"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline
+                    points="22,6 12,13 2,6"
+                  />
+                </svg>
+                <input
+                  placeholder="E-mail"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="sc-AxgMl hNmEyI"
+              >
+                <svg
+                  fill="none"
+                  height="20"
+                  size="20"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    height="11"
+                    rx="2"
+                    ry="2"
+                    width="18"
+                    x="3"
+                    y="11"
+                  />
+                  <path
+                    d="M7 11V7a5 5 0 0 1 10 0v4"
+                  />
+                </svg>
+                <input
+                  placeholder="Senha"
+                  type="password"
+                  value=""
+                />
+              </div>
+              <button
+                class="sc-Axmtr hIvPXH"
+                type="submit"
+              >
+                Entrar
+              </button>
+              <a
+                href="forgot"
+              >
+                Esqueci minha senha
+              </a>
+            </form>
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"
+              />
+              <polyline
+                points="10 17 15 12 10 7"
+              />
+              <line
+                x1="15"
+                x2="3"
+                y1="12"
+                y2="12"
+              />
+            </svg>
+            Criar conta
+          </div>
+        </div>
+        <div
+          class="sc-AxhCb kyqbfA"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-AxjAm kDpNAq"
+    >
+      <div
+        class="sc-AxirZ dtAPxz"
+      >
+        <div
+          class="sc-AxiKw hCmOla"
+        >
+          <img
+            alt="App Logo"
+            src="logo.svg"
+          />
+          <form>
+            <h1>
+              Faça seu logon
+            </h1>
+            <div
+              class="sc-AxgMl hNmEyI"
+            >
+              <svg
+                fill="none"
+                height="20"
+                size="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline
+                  points="22,6 12,13 2,6"
+                />
+              </svg>
+              <input
+                placeholder="E-mail"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-AxgMl hNmEyI"
+            >
+              <svg
+                fill="none"
+                height="20"
+                size="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  height="11"
+                  rx="2"
+                  ry="2"
+                  width="18"
+                  x="3"
+                  y="11"
+                />
+                <path
+                  d="M7 11V7a5 5 0 0 1 10 0v4"
+                />
+              </svg>
+              <input
+                placeholder="Senha"
+                type="password"
+                value=""
+              />
+            </div>
+            <button
+              class="sc-Axmtr hIvPXH"
+              type="submit"
+            >
+              Entrar
+            </button>
+            <a
+              href="forgot"
+            >
+              Esqueci minha senha
+            </a>
+          </form>
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"
+            />
+            <polyline
+              points="10 17 15 12 10 7"
+            />
+            <line
+              x1="15"
+              x2="3"
+              y1="12"
+              y2="12"
+            />
+          </svg>
+          Criar conta
+        </div>
+      </div>
+      <div
+        class="sc-AxhCb kyqbfA"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

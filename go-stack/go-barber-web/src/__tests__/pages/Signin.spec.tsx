@@ -15,4 +15,9 @@ describe('SignIn Page', () => {
 
     debug();
   });
+
+  it('should be rendered', () => {
+    const component = render(<SignIn />);
+    expect(component).toMatchSnapshot();
+  });
 });
