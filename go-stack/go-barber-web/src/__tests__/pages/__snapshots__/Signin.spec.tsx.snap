@@ -6,13 +6,13 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-AxjAm kDpNAq"
+        class="sc-bdfBwQ ffkxDX"
       >
         <div
-          class="sc-AxirZ dtAPxz"
+          class="sc-gsTCUz dDqAGx"
         >
           <div
-            class="sc-AxiKw hCmOla"
+            class="sc-dlfnbm bRhDTv"
           >
             <img
               alt="App Logo"
@@ -23,7 +23,7 @@ Object {
                 Faça seu logon
               </h1>
               <div
-                class="sc-AxgMl hNmEyI"
+                class="sc-jSgupP gXzXci"
               >
                 <svg
                   fill="none"
@@ -51,7 +51,7 @@ Object {
                 />
               </div>
               <div
-                class="sc-AxgMl hNmEyI"
+                class="sc-jSgupP gXzXci"
               >
                 <svg
                   fill="none"
@@ -84,7 +84,7 @@ Object {
                 />
               </div>
               <button
-                class="sc-Axmtr hIvPXH"
+                class="sc-iBPRYJ eBrNA-d"
                 type="submit"
               >
                 Entrar
@@ -123,20 +123,20 @@ Object {
           </div>
         </div>
         <div
-          class="sc-AxhCb kyqbfA"
+          class="sc-hKgILt cxShHz"
         />
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-AxjAm kDpNAq"
+      class="sc-bdfBwQ ffkxDX"
     >
       <div
-        class="sc-AxirZ dtAPxz"
+        class="sc-gsTCUz dDqAGx"
       >
         <div
-          class="sc-AxiKw hCmOla"
+          class="sc-dlfnbm bRhDTv"
         >
           <img
             alt="App Logo"
@@ -147,7 +147,7 @@ Object {
               Faça seu logon
             </h1>
             <div
-              class="sc-AxgMl hNmEyI"
+              class="sc-jSgupP gXzXci"
             >
               <svg
                 fill="none"
@@ -175,7 +175,7 @@ Object {
               />
             </div>
             <div
-              class="sc-AxgMl hNmEyI"
+              class="sc-jSgupP gXzXci"
             >
               <svg
                 fill="none"
@@ -208,7 +208,7 @@ Object {
               />
             </div>
             <button
-              class="sc-Axmtr hIvPXH"
+              class="sc-iBPRYJ eBrNA-d"
               type="submit"
             >
               Entrar
@@ -247,7 +247,7 @@ Object {
         </div>
       </div>
       <div
-        class="sc-AxhCb kyqbfA"
+        class="sc-hKgILt cxShHz"
       />
     </div>
   </div>,

@@ -4,14 +4,19 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "yarn start",
+      "label": "start",
       "type": "shell",
       "command": "yarn && yarn start"
     },
     {
-      "label": "yarn test",
+      "label": "test",
       "type": "shell",
       "command": "yarn && yarn test"
+    },
+    {
+      "label": "test-coverage",
+      "type": "shell",
+      "command": "yarn && yarn test-coverage"
     },
   ]
 }
