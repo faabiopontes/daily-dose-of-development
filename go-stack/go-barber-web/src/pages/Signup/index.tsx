@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import { FC, useCallback, useRef } from 'react';
 import { FiMail, FiLock, FiUser, FiArrowLeft } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
@@ -20,7 +20,7 @@ interface FormInputs {
   password?: string;
 }
 
-const Signup: React.FC = () => {
+const Signup: FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const { push: historyPush } = useHistory();

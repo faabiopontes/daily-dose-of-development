@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import { FC, useCallback, useRef } from 'react';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
@@ -19,7 +19,7 @@ interface FormInputs {
   password: string;
 }
 
-const Signin: React.FC = () => {
+const Signin: FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useAuth();

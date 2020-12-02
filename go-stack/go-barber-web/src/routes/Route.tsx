@@ -1,4 +1,4 @@
-import React from 'react';
+import { ComponentType, FC } from 'react';
 import {
   Redirect,
   Route as ReactDOMRoute,
@@ -8,10 +8,10 @@ import { useAuth } from '../hooks/auth';
 
 interface IRouteProps extends ReactDOMRouteProps {
   isPrivate?: boolean;
-  component: React.ComponentType;
+  component: ComponentType;
 }
 
-const Route: React.FC<IRouteProps> = ({
+const Route: FC<IRouteProps> = ({
   isPrivate = false,
   component: Component,
   ...rest

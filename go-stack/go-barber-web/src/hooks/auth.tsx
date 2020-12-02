@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import { FC, createContext, useCallback, useContext, useState } from 'react';
 import api from '../services/api';
 
 interface IAuthParams {
@@ -28,7 +28,7 @@ interface IAuthState {
 
 const AuthContext = createContext({} as IAuthContext);
 
-const AuthProvider: React.FC = ({ children }) => {
+const AuthProvider: FC = ({ children }) => {
   const hash = '@GoBarber';
   const [data, setData] = useState<IAuthState>(() => {
     const token = localStorage.getItem(`${hash}:token`);

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import {
   FiAlertCircle,
   FiCheckCircle,
@@ -19,7 +19,7 @@ const icons = {
   success: <FiCheckCircle size={20} />,
 };
 
-const Toast: React.FC<IToastProps> = ({ toast, style }) => {
+const Toast: FC<IToastProps> = ({ toast, style }) => {
   const { removeToast } = useToast();
 
   useEffect(() => {
