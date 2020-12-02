@@ -11,8 +11,8 @@ interface IUser {
   email: string;
   name: string;
   avatar: string;
-  created_at: Date;
-  updated_at: Date;
+  created_at: Date; // eslint-disable-line camelcase
+  updated_at: Date; // eslint-disable-line camelcase
 }
 
 interface IAuthContext {
