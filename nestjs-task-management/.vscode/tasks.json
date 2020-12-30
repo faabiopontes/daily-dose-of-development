@@ -7,6 +7,21 @@
       "label": "yarn start",
       "type": "shell",
       "command": "yarn start"
+    },
+    {
+      "label": "yarn start:dev",
+      "type": "shell",
+      "command": "yarn start:dev"
+    },
+    {
+      "label": "yarn start:hot",
+      "type": "shell",
+      "command": "yarn start:hot"
+    },
+    {
+      "label": "yarn start:debug",
+      "type": "shell",
+      "command": "yarn start:debug"
     }
   ]
 }
