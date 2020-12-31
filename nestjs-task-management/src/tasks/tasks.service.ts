@@ -28,4 +28,14 @@ export class TasksService {
     this.tasks.push(task);
     return task;
   }
+
+  deleteTaskById(id: string): void {
+    const taskIndex = this.tasks.findIndex((task) => task.id === id);
+
+    if (taskIndex === -1) {
+      throw new Error('Task ID Not Found');
+    }
+
+    this.tasks.splice(taskIndex, 1);
+  }
 }
