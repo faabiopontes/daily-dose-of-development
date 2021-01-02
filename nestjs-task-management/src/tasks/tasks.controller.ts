@@ -7,23 +7,30 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   Res,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { Task, TaskStatus } from './task.model';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { Response } from 'express';
+import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
+import { get } from 'http';
 
 @Controller('tasks')
 export class TasksController {
   constructor(private tasksService: TasksService) {}
 
   @Get()
-  getAllTasks(): Task[] {
+  getTasks(@Query() filterDto: GetTasksFilterDto): Task[] {
+    if (Object.keys(filterDto).length) {
+      return this.tasksService.getTasksWithFilters(filterDto);
+    }
+
     return this.tasksService.getAllTasks();
   }
 
-  @Get(':id')
+  @Get('/:id')
   getTaskById(@Param('id') id: string): Task {
     return this.tasksService.getTaskById(id);
   }
@@ -33,7 +40,7 @@ export class TasksController {
     return this.tasksService.createTask(createTaskDto);
   }
 
-  @Delete(':id')
+  @Delete('/:id')
   deleteTaskById(@Param('id') id: string, @Res() res: Response) {
     try {
       this.tasksService.deleteTaskById(id);
@@ -43,7 +50,7 @@ export class TasksController {
     }
   }
 
-  @Patch(':id/status')
+  @Patch('/:id/status')
   updateTaskStatus(
     @Param('id') id: string,
     @Res() res: Response,
@@ -55,5 +62,10 @@ export class TasksController {
     } catch (err) {
       res.status(HttpStatus.BAD_REQUEST).send();
     }
+  }
+
+  @Post('/multiples')
+  createMultiplesTasks(@Body('tasks') createTasksDto: CreateTaskDto[]) {
+    return this.tasksService.createMultiplesTasks(createTasksDto);
   }
 }

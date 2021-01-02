@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Task, TaskStatus } from './task.model';
 import { v4 as uuidv4 } from 'uuid';
 import { CreateTaskDto } from './dto/create-task.dto';
+import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 
 @Injectable()
 export class TasksService {
@@ -11,18 +12,46 @@ export class TasksService {
     return this.tasks;
   }
 
+  getTasksWithFilters(filterDto: GetTasksFilterDto): Task[] {
+    const { status, search } = filterDto;
+    return this.getAllTasks().filter((task) => {
+      let show = true;
+
+      if (status) {
+        show = show && task.status === status;
+      }
+
+      if (search) {
+        show =
+          show &&
+          (task.description.includes(search) || task.title.includes(search));
+      }
+
+      return show;
+    });
+  }
+
+  createMultiplesTasks(createTasksDto: CreateTaskDto[]) {
+    console.log(createTasksDto);
+    console.log(this);
+
+    createTasksDto.forEach((createTaskDto) => this.createTask(createTaskDto));
+
+    return this.getAllTasks();
+  }
+
   getTaskById(id: string): Task {
     return this.tasks.find((task) => task.id === id);
   }
 
   createTask(createTaskDto: CreateTaskDto): Task {
-    const { title, description } = createTaskDto;
+    const { title, description, status } = createTaskDto;
 
     const task: Task = {
       id: uuidv4(),
       title,
       description,
-      status: TaskStatus.OPEN,
+      status: status ?? TaskStatus.OPEN,
     };
 
     this.tasks.push(task);
