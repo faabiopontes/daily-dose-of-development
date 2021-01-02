@@ -32,9 +32,6 @@ export class TasksService {
   }
 
   createMultiplesTasks(createTasksDto: CreateTaskDto[]) {
-    console.log(createTasksDto);
-    console.log(this);
-
     createTasksDto.forEach((createTaskDto) => this.createTask(createTaskDto));
 
     return this.getAllTasks();
