@@ -17,6 +17,7 @@ import { Task, TaskStatus } from './task.model';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { Response } from 'express';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
+import { TaskStatusValidationPipe } from './pipes/task-status-validation.pipe';
 
 @Controller('tasks')
 export class TasksController {
@@ -51,7 +52,7 @@ export class TasksController {
   updateTaskStatus(
     @Param('id') id: string,
     @Res() res: Response,
-    @Body('status') status: TaskStatus,
+    @Body('status', TaskStatusValidationPipe) status: TaskStatus,
   ) {
     try {
       const updatedTask = this.tasksService.updateTaskStatus(id, status);
