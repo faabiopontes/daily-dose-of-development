@@ -15,7 +15,6 @@ import { Task, TaskStatus } from './task.model';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { Response } from 'express';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
-import { get } from 'http';
 
 @Controller('tasks')
 export class TasksController {
