@@ -43,13 +43,8 @@ export class TasksController {
   }
 
   @Delete('/:id')
-  deleteTaskById(@Param('id') id: string, @Res() res: Response) {
-    try {
-      this.tasksService.deleteTaskById(id);
-      res.status(HttpStatus.NO_CONTENT).json();
-    } catch (err) {
-      res.status(HttpStatus.BAD_REQUEST).send();
-    }
+  deleteTaskById(@Param('id') id: string) {
+    this.tasksService.deleteTaskById(id);
   }
 
   @Patch('/:id/status')
