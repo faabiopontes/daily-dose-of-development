@@ -44,17 +44,11 @@ export class TasksService {
     }
     return found;
   }
-  // createTask(createTaskDto: CreateTaskDto): Task {
-  //   const { title, description, status } = createTaskDto;
-  //   const task: Task = {
-  //     id: uuidv4(),
-  //     title,
-  //     description,
-  //     status: status ?? TaskStatus.OPEN,
-  //   };
-  //   this.tasks.push(task);
-  //   return task;
-  // }
+
+  createTask(createTaskDto: CreateTaskDto): Promise<Task> {
+    return this.taskRepository.createTask(createTaskDto);
+  }
+
   // deleteTaskById(id: string): void {
   //   const found = this.getTaskById(id);
   //   const foundIndex = this.tasks.findIndex((task) => task.id === found.id);
