@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, createMuiTheme, FormControlLabel, makeStyles, TextField, ThemeProvider } from '@material-ui/core';
+import { Button, ButtonGroup, Checkbox, createMuiTheme, FormControlLabel, makeStyles, TextField, ThemeProvider, Typography } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save'
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useState } from 'react';
 import { green, orange } from '@material-ui/core/colors';
+import 'fontsource-roboto';
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +19,15 @@ const useStyles = makeStyles({
 });
 
 const theme = createMuiTheme({
+  typography: {
+    h2: {
+      fontSize: 18,
+      marginBottom: 15,
+    },
+    subtitle1: {
+      fontSize: 12,
+    }
+  },
   palette: {
     primary: {
       main: green[500]
@@ -60,7 +70,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <header className="App-header">
-          <h1>Material UI React Tutorial</h1>
+          <Typography variant="h2" component="div">
+            Material UI React Tutorial
+          </Typography>
+          <Typography variant="subtitle1">
+            Learn how to use Material UI
+          </Typography>
           <ButtonStyled />
           <TextField
             variant="outlined"
