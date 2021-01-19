@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Button, ButtonGroup, Checkbox, createMuiTheme, FormControlLabel, makeStyles, TextField, ThemeProvider, Typography } from '@material-ui/core';
+import { Button, ButtonGroup, Checkbox, Container, createMuiTheme, FormControlLabel, Grid, makeStyles, Paper, TextField, ThemeProvider, Typography } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save'
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useState } from 'react';
@@ -68,45 +68,60 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <Typography variant="h2" component="div">
-            Material UI React Tutorial
-          </Typography>
-          <Typography variant="subtitle1">
-            Learn how to use Material UI
-          </Typography>
-          <ButtonStyled />
-          <TextField
-            variant="outlined"
-            color="secondary"
-            label="The time"
-            type="email"
-            placeholder="test@test.com"
-          />
-          <CheckboxExample />
-          <ButtonGroup>
-            <Button
-              startIcon={<SaveIcon />}
-              onClick={() => alert("Hello")}
-              size="large"
-              variant="contained"
-              color="primary">
-              Save
-            </Button>
-            <Button
-              endIcon={<DeleteIcon />}
-              onClick={() => alert("Hello")}
-              size="large"
-              variant="contained"
-              color="secondary">
-              Discard
-            </Button>
+      <Container maxWidth="sm">
+        <div className="App">
+          <header className="App-header">
+            <Typography variant="h2" component="div">
+              Material UI React Tutorial
+            </Typography>
+            <Typography variant="subtitle1">
+              Learn how to use Material UI
+            </Typography>
+            <ButtonStyled />
 
-          </ButtonGroup>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Paper style={{ height: 75, width: 50, }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50, }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50, }} />
+              </Grid>
+            </Grid>
+
+            <TextField
+              variant="outlined"
+              color="secondary"
+              label="The time"
+              type="email"
+              placeholder="test@test.com"
+            />
+            <CheckboxExample />
+            <ButtonGroup>
+              <Button
+                startIcon={<SaveIcon />}
+                onClick={() => alert("Hello")}
+                size="large"
+                variant="contained"
+                color="primary">
+                Save
+              </Button>
+              <Button
+                endIcon={<DeleteIcon />}
+                onClick={() => alert("Hello")}
+                size="large"
+                variant="contained"
+                color="secondary">
+                Discard
+              </Button>
+
+            </ButtonGroup>
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
