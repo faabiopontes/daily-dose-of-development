@@ -14,29 +14,10 @@ export class TasksService {
     private taskRepository: TaskRepository,
   ) {}
 
-  // private readonly tasks: Task[] = [];
-  // getAllTasks(): Task[] {
-  //   return this.tasks;
-  // }
-  // getTasksWithFilters(filterDto: GetTasksFilterDto): Task[] {
-  //   const { status, search } = filterDto;
-  //   return this.getAllTasks().filter((task) => {
-  //     let show = true;
-  //     if (status) {
-  //       show = show && task.status === status;
-  //     }
-  //     if (search) {
-  //       show =
-  //         show &&
-  //         (task.description.includes(search) || task.title.includes(search));
-  //     }
-  //     return show;
-  //   });
-  // }
-  // createMultiplesTasks(createTasksDto: CreateTaskDto[]) {
-  //   createTasksDto.forEach((createTaskDto) => this.createTask(createTaskDto));
-  //   return this.getAllTasks();
-  // }
+  getTasks(filterDto: GetTasksFilterDto) {
+    //
+  }
+
   async getTaskById(id: number): Promise<Task> {
     const found = await this.taskRepository.findOne(id);
     // const found = this.tasks.find((task) => task.id === id);
