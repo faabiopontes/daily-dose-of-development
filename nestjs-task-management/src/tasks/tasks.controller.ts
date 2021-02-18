@@ -50,19 +50,19 @@ export class TasksController {
     return this.tasksService.deleteTaskById(id);
   }
 
-  // @Patch('/:id/status')
-  // updateTaskStatus(
-  //   @Param('id') id: string,
-  //   @Res() res: Response,
-  //   @Body('status', TaskStatusValidationPipe) status: TaskStatus,
-  // ) {
-  //   try {
-  //     const updatedTask = this.tasksService.updateTaskStatus(id, status);
-  //     res.json(updatedTask);
-  //   } catch (err) {
-  //     res.status(HttpStatus.BAD_REQUEST).send();
-  //   }
-  // }
+  @Patch('/:id/status')
+  async updateTaskStatus(
+    @Param('id', ParseIntPipe) id: number,
+    @Res() res: Response,
+    @Body('status', TaskStatusValidationPipe) status: TaskStatus,
+  ): Promise<void> {
+    try {
+      const updatedTask = await this.tasksService.updateTaskStatus(id, status);
+      res.json(updatedTask);
+    } catch (err) {
+      res.status(HttpStatus.BAD_REQUEST).send();
+    }
+  }
 
   // @Post('/multiples')
   // createMultiplesTasks(@Body('tasks') createTasksDto: CreateTaskDto[]) {

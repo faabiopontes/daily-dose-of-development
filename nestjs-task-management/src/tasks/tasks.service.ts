@@ -58,12 +58,12 @@ export class TasksService {
     }
   }
 
-  // updateTaskStatus(id: string, status: TaskStatus): Task {
-  //   const taskIndex = this.tasks.findIndex((task) => task.id === id);
-  //   if (taskIndex === -1) {
-  //     throw new Error('Task ID Not Found');
-  //   }
-  //   this.tasks[taskIndex] = { ...this.tasks[taskIndex], status };
-  //   return this.tasks[taskIndex];
-  // }
+  async updateTaskStatus(id: number, status: TaskStatus): Promise<Task> {
+    const task = await this.taskRepository.findOne(id);
+    if (!task) {
+      throw new Error('Task ID Not Found');
+    }
+    task.status = status;
+    return task.save();
+  }
 }
