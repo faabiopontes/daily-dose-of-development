@@ -62,9 +62,14 @@ export class TasksController {
     @Param('id', ParseIntPipe) id: number,
     @Res() res: Response,
     @Body('status', TaskStatusValidationPipe) status: TaskStatus,
+    @GetUser() user: User,
   ): Promise<void> {
     try {
-      const updatedTask = await this.tasksService.updateTaskStatus(id, status);
+      const updatedTask = await this.tasksService.updateTaskStatus(
+        id,
+        status,
+        user,
+      );
       res.json(updatedTask);
     } catch (err) {
       res.status(HttpStatus.BAD_REQUEST).send();
