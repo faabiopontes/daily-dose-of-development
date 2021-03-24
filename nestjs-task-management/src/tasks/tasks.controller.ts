@@ -39,8 +39,11 @@ export class TasksController {
   }
 
   @Get('/:id')
-  getTaskById(@Param('id', ParseIntPipe) id: number): Promise<Task> {
-    return this.tasksService.getTaskById(id);
+  getTaskById(
+    @Param('id', ParseIntPipe) id: number,
+    @GetUser() user: User,
+  ): Promise<Task> {
+    return this.tasksService.getTaskById(id, user);
   }
 
   @Post()
@@ -53,8 +56,8 @@ export class TasksController {
   }
 
   @Delete('/:id')
-  deleteTaskById(@Param('id', ParseIntPipe) id: number) {
-    return this.tasksService.deleteTaskById(id);
+  deleteTaskById(@Param('id', ParseIntPipe) id: number, @GetUser() user: User) {
+    return this.tasksService.deleteTaskById(id, user);
   }
 
   @Patch('/:id/status')
@@ -76,8 +79,11 @@ export class TasksController {
     }
   }
 
-  // @Post('/multiples')
-  // createMultiplesTasks(@Body('tasks') createTasksDto: CreateTaskDto[]) {
-  //   return this.tasksService.createMultiplesTasks(createTasksDto);
-  // }
+  @Post('/multiples')
+  createMultiplesTasks(
+    @Body('tasks') createTasksDto: CreateTaskDto[],
+    @GetUser() user: User,
+  ) {
+    return this.tasksService.createMultiplesTasks(createTasksDto, user);
+  }
 }
