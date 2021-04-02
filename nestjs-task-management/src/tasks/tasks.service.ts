@@ -76,6 +76,9 @@ export class TasksService {
     }
 
     task.status = status;
-    return task.save();
+
+    await task.save();
+
+    return task;
   }
 }
