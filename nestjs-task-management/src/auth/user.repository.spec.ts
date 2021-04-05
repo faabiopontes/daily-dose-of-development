@@ -97,7 +97,10 @@ describe('UserRepository', () => {
   describe('hashPassword', () => {
     it('calls bcrypt.hash to generate a hash', async () => {
       const testHash = 'testHash';
-      bcrypt.hash = jest.fn().mockResolvedValue(testHash);
+      Object.defineProperty(bcrypt, 'hash', {
+        value: jest.fn().mockResolvedValue(testHash),
+      });
+
       expect(bcrypt.hash).not.toHaveBeenCalled();
 
       const result = await userRepository.hashPassword(

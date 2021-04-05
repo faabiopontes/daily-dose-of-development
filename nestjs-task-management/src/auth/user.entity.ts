@@ -28,6 +28,7 @@ export class User extends BaseEntity {
   tasks: Task[];
 
   async validatePassword(password: string): Promise<boolean> {
-    return (await hash(password, this.salt)) === this.password;
+    const hashedPassword = await hash(password, this.salt);
+    return hashedPassword === this.password;
   }
 }

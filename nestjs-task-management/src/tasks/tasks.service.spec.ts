@@ -146,7 +146,7 @@ describe('TasksService', () => {
 
       expect(
         tasksService.updateTaskStatus(mockTask.id, TaskStatus.DONE, mockUser),
-      ).rejects.toThrow(NotFoundException);
+      ).rejects.toThrowError();
     });
   });
 });
