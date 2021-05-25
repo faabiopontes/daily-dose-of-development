@@ -7,9 +7,9 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
 import { UserRepository } from './user.repository';
-import { IConfigJWT } from '../types/index';
+import { ConfigJWT } from '../types/index';
 
-const configJwt = get<IConfigJWT>('jwt');
+const configJwt = get<ConfigJWT>('jwt');
 
 @Module({
   imports: [

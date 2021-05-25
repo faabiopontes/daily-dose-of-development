@@ -1,14 +1,14 @@
-export interface IConfig {
-  server: IConfigServer;
-  db: IConfigDB;
-  jwt: IConfigJWT;
+export interface Config {
+  server: ConfigServer;
+  db: ConfigDB;
+  jwt: ConfigJWT;
 }
 
-export interface IConfigServer {
+export interface ConfigServer {
   port: number;
 }
 
-export interface IConfigDB {
+export interface ConfigDB {
   type: 'mysql' | 'mariadb' | 'postgres' | 'mssql';
   host: string;
   database: string;
@@ -18,7 +18,7 @@ export interface IConfigDB {
   synchronize: boolean;
 }
 
-export interface IConfigJWT {
+export interface ConfigJWT {
   expiresIn: number;
   secret: string;
 }
