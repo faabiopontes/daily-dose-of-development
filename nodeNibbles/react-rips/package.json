@@ -19,9 +19,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^24.0.2",
+    "expo": "^47.0.13",
     "firebase": "^4.8.1",
     "react": "16.2.0",
-    "react-native": "^0.51.0"
+    "react-native": "^0.70.6"
   }
 }
