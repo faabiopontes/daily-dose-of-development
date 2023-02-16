@@ -1,0 +1,18 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open Prisma Studio",
+      "type": "shell",
+      "command": "npx prisma studio"
+    },
+    {
+      "label": "Script: Create User",
+      "type": "shell",
+      "command": "npx ts-node script-create-user.ts"
+    },
+
+  ]
+}
