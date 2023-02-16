@@ -1,6 +1,6 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./tsconfig.json');
 
 module.exports = {
@@ -21,7 +21,8 @@ module.exports = {
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
-    '<rootDir>/src/modules/**/services/*.ts'
+    '<rootDir>/src/modules/**/services/*.ts',
+    '<rootDir>/src/helpers/*.ts',
   ],
 
   // The directory where Jest should output its coverage files
@@ -146,7 +147,10 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['**/*.spec.ts'],
+  testMatch: [
+    '**/*.spec.ts',
+    '**/*.test.ts',
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
