@@ -19,7 +19,7 @@
         "cross-env": "^5.1.4",
         "jquery": "^3.5.0",
         "laravel-mix": "^1.7.2",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.21",
         "vue": "^2.5.16"
     },
     "dependencies": {
