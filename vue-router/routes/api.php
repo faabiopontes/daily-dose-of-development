@@ -35,6 +35,7 @@ Route::namespace('Api')->group(function () {
         if (rand(1, 10) < 3) {
             abort(500, 'We could not retrieve the users');
         }
+
         // Our factory creates Eloquent models
         // The make() method returns a collection
         return factory('App\User', 10)->make();
